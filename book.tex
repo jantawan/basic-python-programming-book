@@ -27,6 +27,7 @@
 \usepackage[a4paper,top=1in,bottom=1in,left=1in,right=1in]{geometry}
 \usepackage[hashEnumerators,smartEllipses]{markdown}
 \usepackage{indentfirst}
+\usepackage{apacite}
 
 \usepackage{minted}
 \setminted{fontsize=\small,baselinestretch=1}
@@ -61,4 +62,8 @@
 \mainmatter
 \include{introduction}
 \include{python_elements}
+
+\renewcommand{\refname}{บรรณานุกรม}
+\bibliography{book}
+\bibliographystyle{apacite}
 \end{document}
