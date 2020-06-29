@@ -1,5 +1,5 @@
 % !TEX program = xelatex
-\documentclass[12pt,a4paper]{book}
+\documentclass[14pt,a4paper]{extbook}
 
 %% --- Thai --- %
 % Set up fonts and encoding
@@ -13,21 +13,26 @@
 
 % Set up Thai fonts
 \setmainfont[%
-    ItalicFont={TH Sarabun New Italic},%
-    BoldFont={TH Sarabun New Bold},%
-    BoldItalicFont={TH Sarabun New Bold Italic},%
+    ItalicFont={Thasadith Italic},%
+    BoldFont={Thasadith Bold},%
+    BoldItalicFont={Thasadith Italic},%
     Script=Thai,%
     Scale=MatchLowercase,%
     WordSpace=1.25,%
     Mapping=tex-text,%
-]{TH Sarabun New}
+]{Thasadith}
 
 %% --- %%
 
 \usepackage[a4paper,top=1in,bottom=1in,left=1in,right=1in]{geometry}
-\usepackage[hashEnumerators,smartEllipses]{markdown}
 \usepackage{indentfirst}
 \usepackage{apacite}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{10pt}{10pt}
 
 \usepackage{minted}
 \setminted{fontsize=\small,baselinestretch=1}
@@ -42,13 +47,13 @@
 \title{
 เอกสารประกอบการสอนรายวิชา\\
 477-201 การเขียนโปรแกรมคอมพิวเตอร์\\
-\vspace{1cm}
+\vspace{1mm}
 การเขียนโปรแกรมภาษา Python เบื้องต้น\\
 (Basic Python Programming)
 }
 \author{
 ดร. จันทวรรณ ปิยะวัฒน์\\
-\vspace{0.25cm}\\
+\vspace{1mm}\\
 สาขาวิชาระบบสารสนเทศทางธุรกิจ\\
 ภาควิชาบริหารธุรกิจ คณะวิทยาการจัดการ\\
 มหาวิทยาลัยสงขลานครินทร์\\
