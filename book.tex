@@ -36,13 +36,15 @@
 
 \usepackage{minted}
 \setminted{fontsize=\small,baselinestretch=1}
-\newminted{py}{linenos=true,frame=lines,framesep=10pt}
+\newminted{py}{python3,linenos=true,frame=lines,framesep=10pt}
 
 \renewcommand{\baselinestretch}{1.5}
 \renewcommand{\contentsname}{สารบัญ}
 \renewcommand{\chaptername}{บทที่}
 
 \begin{document}
+\newmintinline{py}{python3}
+
 \frontmatter
 \title{
 เอกสารประกอบการสอนรายวิชา\\
