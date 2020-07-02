@@ -1,0 +1,61 @@
+ \chapter {ประโยคเงื่อนไขในภาษา Python (Conditional Statements)}
+
+\section{การเปรียบเทียบค่า (Boolean Expressions)}
+
+Boolean Expressions คือ การดำเนินการเปรียบเทียบค่าเพื่อให้ได้ผลลัพธ์ออกมาเป็นถูก (True) หากเงื่อนไขเป็นจริง หรือผิด (False) หากเงื่อนไขเป็นเท็จ เช่น ค่าของ x มากกว่าค่าของ y ใช่หรือไม่ ซึ่งผลลัพธ์จะออกมาเป็นถูกหรือผิด
+
+\section{ตัวดำเนินการทางตรรกศาสตร์ (Logical Operators)}
+
+การเปรียบเทียบค่ามากกว่าหนึ่งครั้งเชื่อมต่อกันสามารถดำเนินการได้โดยใช้ตัวดำเนินการทาง ตรรกศาสตร์ (Logical Operators) ซึ่งได้แก่ และ (and) หรือ (or) ไม่ (not) เช่น a > 2 or c > b and c >2
+
+ตัวอย่างการใช้ตัวดำเนินการทางตรรกศาสตร์ในภาษา Python
+
+\section{การใช้คำสั่ง if เพื่อเลือกเงื่อนไข}
+
+เงื่อนไขที่ใช้ในภาษา Python คือ if Statement สิ่งที่ตามหลัง if คือ Boolean Expression เรียกว่า Statement ใหญ่ และใน Statement ใหญ่ ก็มี Statement ย่อย การดูว่า Statement ย่อยอยู่ใน if Statement ใดให้ดูที่การย่อหน้าหรือ Indentation ในภาษา Python การย่อหน้าสำคัญมากจะเป็นการบอกว่าอะไรอยู่ภายในอะไร 
+
+รูปแบบของการใช้งานคำสั่ง if ในภาษา Python โดยถ้าหากเงื่อนไขเป็นจริง ตัวโปรแกรมจะประมวลผลในคำสั่ง if หลังเครื่องหมาย : 
+
+ตัวอย่างเช่น ให้แสดงข้อความว่า อายุต่ำกว่าเกณฑ์ ถ้าหากค่าอายุที่รับเข้ามาต่ำกว่า 18 ปี
+
+\section{การใช้ if กับ else}
+
+โครงสร้างคำสั่ง if…else จะดำเนินในบล็อคคำสั่ง else ถ้าหากเงื่อนไขในคำสั่ง if นั้นเป็นเท็จ โดยมีรูปแบบการเขียนดังนี้
+
+\section{Chained Expressions}
+
+การใช้ Chained Expressions คือ การใส่ elif ไปเรื่อยๆ และเงื่อนไขสุดท้ายจะต้องใช้ else โดยไม่ต้องการระบุ Boolean Expressions ใดๆ อีกแล้วหลังจากที่ใส่ else
+
+\section{Nested Expressions}
+
+if มี Statement อยู่ข้างในได้และ else ก็มี Statement อยู่ข้างในได้เช่นกัน เรียกว่า Nested Expressions
+
+\section{แบบฝึกหัด}
+
+\begin{enumerate} 
+\item  จงเขียน code ต่อไปนี้
+\begin{itemize}
+\item ให้ถามว่า Are you bored? และให้ตอบว่า y หรือ n
+\item ถ้าตอบ y ให้พิมพ์ข้อความว่า Let’s go outside.
+\end{itemize}
+\item จงเขียน code ต่อไปนี้
+\begin{itemize}
+\item ตั้งค่าตัวแปร var รับค่าเป็นตัวเลขจำนวนเต็มจากผู้ใช้
+\item ถ้า var > 100 ให้แสดงผลว่า “The value is over 100.”
+\item ถ้า เป็นกรณีอื่นๆ ให้แสดงผลว่า “The value is less than or equal 100.”
+\end{itemize}
+\item จงเขียน code ต่อไปนี้
+\begin{itemize}
+\item รับค่า a, b เป็นจำนวนเต็ม
+\item แสดงผลว่า a>b หรือ a<b หรือ a=b
+\end{itemize}
+\item จงเขียน code ต่อไปนี้
+\begin{itemize}
+\item รับค่า score เป็นจุดทศนิยม
+\item ถ้าคะแนน 81-100 แสดงผลว่า เกรด A
+\item ถ้าคะแนน 61-80  แสดงผลว่า เกรด B
+\item ถ้าคะแนน 41-60 แสดงผลว่า เกรด C
+\item ถ้าคะแนน 0-40 แสดงผลว่า เกรด F
+\item เมื่อแสดงผลดังกล่าวแล้ว ให้แจ้งด้วยว่า “ตัดเกรดแล้ว”
+\end{itemize}
+\end{enumerate}
