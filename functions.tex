@@ -3,36 +3,179 @@
 
 การใช้ฟังก์ชันในภาษา Python ก็เหมือนฟังก์ชันทางคณิตศาสตร์ คือ กำหนดชื่อฟังก์ชันตามด้วยสิ่งที่อยู่ในวงเล็บซึ่งเรียกว่า arguments ซึ่งอาจจะมีได้มากกว่า 1 และในภาษา Python มีการกำหนดฟังก์ชันมาให้เรียกใช้ได้เลยอยู่บ้างแล้ว เช่น type(42) คือ การแสดงค่าประเภทของเลข 42 หรือ id(42) คือการแสดงตำแหน่งที่อยู่ของเลข 42 ในหน่วยความจำ
 
+\begin{pycode}
+>>> type(42)
+|<class \rq{}int\rq{}>|
+>>> a = 1
+>>> id(a)
+1538021648
+\end{pycode}
+
+
 \section{การเรียกใช้โมดูล (Modules)}
 
 โมดูล (Modules) คือ ฟังก์ชันที่รวมกันไว้เป็นหมวดหมู่ และสามารถดึงมาใช้ได้ในโปรแกรมได้ด้วยการ import เช่น import math และหากเรียกใช้ฟังก์ชัน dir(math) จะแสดงฟังก์ชันในโมดูล math ออกมา 
 
-การใช้งานโมดูลจะมีการใช้งานแบบ Dot Notation หากเห็นการเขียนโมดูล math ในลักษณะนี้ เช่น math.pi ตัว pi เรียกว่าเป็นตัวแปรที่อยู่ในโมดูล math ซึ่งไม่ใช่ฟังก์ชัน แต่ถ้าเขียน math.pow(2,2) คือ สองยกกำลังสอง ลักษณะนี้จะเป็นการเรียกใช้ฟังก์ชันที่อยู่ในโมดูล
+\begin{pycode}
+>>> import math
+>>> type(math)
+|<class \rq{}module\rq{}>|
+>>> id(math)
+56337632
+
+\end{pycode}
+
+
+การใช้งานโมดูลจะมีการใช้งานแบบ Dot Notation หากเห็นการเขียนโมดูล math ในลักษณะนี้ เช่น  \pyinline{math.pi} ตัว  \pyinline{pi} เรียกว่าเป็นตัวแปรที่อยู่ในโมดูล  \pyinline{math} ซึ่งไม่ใช่ฟังก์ชัน แต่ถ้าเขียน  \pyinline{math.pow(2,2)} คือ สองยกกำลังสอง ลักษณะนี้จะเป็นการเรียกใช้ฟังก์ชันที่อยู่ในโมดูล
+
+\begin{pycode}
+>>> math.pi
+3.141592653589793
+>>> math.pow(2,2)
+4.0
+\end{pycode}
+
 
 \section{ฟังก์ชันซ้อน (Composition)}
 
 การใช้ฟังก์ชันไม่จำเป็นต้องใช้ฟังก์ชันแบบฟังก์ชันเดียว ฟังก์ชันใช้ฟังก์ชันซ้อนกันได้ คือ การรวมฟังก์ชันหลายๆ อันซ้อนกัน เรียกต่อๆ กันไปได้
 
+\begin{pycode}
+>>> math.exp(math.log(3+2))
+4.9999999999999
+\end{pycode}
+
 \section{การสร้างฟังก์ชัน}
 
 การเขียนฟังก์ชันหรือสร้างฟังก์ชันขึ้นมาเองเพื่อทำงานเพื่อวัตถุประสงค์บางอย่าง ต้องใช้ def Statement ซึ่งย่อมาจาก define 
 
+\begin{pycode}
+def function_name(args...):
+    # statements
+
+def function_name(args...):
+    # statements
+    return value
+\end{pycode}
+
 เมื่อเขียนฟังก์ชันไว้ใน Source Code แล้วทำการ Run ฟังก์ชันนั้นจะถูก Define ไว้ในระบบแล้วถูกเรียกใช้ขึ้นมาได้เลย ด้วยการเรียกชื่อฟังก์ชันนั้นกี่ครั้งต่อกี่ครั้งก็ได้ โดยการเรียกใช้คือ เรียกชื่อฟังก์ชันนั้นตามด้วยวงเล็บซึ่งจะมี Arguments หรือไม่ก็แล้วแต่ฟังก์ชันที่กำหนดไว้
+
+Source code:
+\begin{pycode}
+def happy_birthday_song():
+    print('Happy Birthday.')
+    print('Happy Birthday.')
+    print('Happy Birthday.')
+    print('Happy Birthday to you.')
+\end{pycode}
+
+Result:
+\begin{pycode}
+>>>  happy_birthday_song()
+Happy Birthday.
+Happy Birthday.
+Happy Birthday.
+Happy Birthday to you.
+\end{pycode}
+
 
 \section{พารามิเตอร์ของฟังก์ชัน (Parameters)}
 
 ในวงเล็บ () เป็นการกำหนด Argument ของฟังก์ชัน ซึ่งจะกลายเป็นพารามิเตอร์ (Parameters) หรือตัวแปรที่ใช้ในฟังก์ชันนั้นๆ เท่านั้น หรือเรียกว่า Local Variables 
 
+Source code:
+\begin{pycode}
+x = 5
+def happy_birthday_song(name):
+    print('Happy Birthday.')
+    print('Happy Birthday.')
+    print('Happy Birthday.')
+    print('Happy Birthday to ' , name)
+    print(x)
+happy_birthday_song('Mike')
+\end{pycode}
+
+Result:
+\begin{pycode}
+Happy Birthday.
+Happy Birthday.
+Happy Birthday.
+Happy Birthday to Mike
+5
+\end{pycode}
+
+
 ตัวแปรใดก็ตามที่จะใช้เป็น Local ให้ใส่คำว่า global ไปด้านหน้าตัวแปรที่ถูกเรียกใช้ในฟังก์ชัน อันที่จริงแล้วจะไม่เขียนคำว่า global ก็ได้หากชื่อตัวแปรไม่ซ้ำกันเลย
 
+Source code:
+\begin{pycode}
+x = 5
+def happy_birthday_song(name):
+    global x
+    print('Happy Birthday.')
+    print('Happy Birthday.')
+    print('Happy Birthday.')
+    print('Happy Birthday to ' , name)
+    print(x)
+happy_birthday_song('Mike')
+\end{pycode}
+
+Result:
+\begin{pycode}
+Happy Birthday.
+Happy Birthday.
+Happy Birthday.
+Happy Birthday to Mike
+5
+\end{pycode}
 
 \section{ฟังก์ชัน return}
 
 ฟังก์ชันทุกอันจะต้อง return คือสิ้นสุดการทำงาน แต่ได้เว้นไว้ในฐานที่เข้าใจ เมื่อโปรแกรมไล่การทำงานมาถึงจุด return โปรแกรมจะหยุดทำงานทันทีทั้งๆ ที่ยังมีคำสั่งอื่นตามมาหลังจาก return อีกก็ตาม  ฟังก์ชัน return ซึ่งไม่ได้ return ค่าอะไรออกมาเรียกว่า Void 
 
+Source code:
+\begin{pycode}
+x = 5
+def happy_birthday_song(name):
+    print('Happy Birthday.')
+    return
+    print('Happy Birthday.')
+    print('Happy Birthday.')
+    print('Happy Birthday to ' , name)
+    print(x)
+happy_birthday_song('Mike')
+\end{pycode}
+
+Result:
+\begin{pycode}
+Happy Birthday.
+\end{pycode}
+
 \section{การคืนค่าจากฟังก์ชัน}
 
 ฟังก์ชันสามารถ return ค่าได้ด้วย ดังเช่นตัวอย่างการหาพื้นที่สี่เหลี่ยม โดยกำหนดฟังก์ชันชื่อ  \pyinline{rectangle_area(width, height)} และฟังก์ชันมีพารามิเตอร์สองตัวสำหรับความกว้างและความยาวของสี่เหลี่ยม และฟังก์ชันทำการ return ผลลัพธ์ที่เป็นพื้นที่กลับไปด้วยคำสั่ง return
+
+Source code:
+\begin{pycode}
+# void function definition
+def happy_birthday_song(name):
+    print('Happy Birthday.')
+    print('Happy Birthday.')
+    print('Happy Birthday.')
+    print('Happy Birthday to ' , name)
+    return name
+
+def rectangle_area(width, height):
+    return width * height
+    
+x = rectangle_area(4, 3)
+print('The area of rectangle is', str(x))
+\end{pycode}
+
+Result:
+\begin{pycode}
+The area of rectangle is 12
+\end{pycode}
 
 
 \section{การเขียนโปรแกรมเชิงฟังก์ชัน (Functional Programming)}
@@ -42,12 +185,19 @@
 
 จากรูป  \pyinline{x=f(g(h(x)))} ทำงานเหมือนกันกับ  \pyinline{x = h(x) }แล้ว  \pyinline{x = g(x)} แล้ว  \pyinline{x = f(x)}
 
+\begin{pycode}
+x = f(g(h(x)))
+x = h(x)
+x = g(x)
+x = f(x)
+\end{pycode}
+
 
 \section{แบบฝึกหัด}
 
 \begin{enumerate} 
 
-\item ตั้งชื่อฟังก์ชัน hello เพื่อแสดงผลว่า สวัสดีคุณ
+\item ตั้งชื่อฟังก์ชัน \pyinline{hello} เพื่อแสดงผลว่า สวัสดีคุณ
 \item สร้างฟังก์ชันคำนวณพื้นที่ รับค่า ความกว้าง และ ความยาว
 \item สร้างฟังก์ชันชื่อ  \pyinline{maximal_2} รับ arguments 2 ค่า และ return ค่าที่มากที่สุดออกมา
 \item สร้างฟังก์ชันชื่อ  \pyinline{maximal_3} รับ arguments 3 ค่า และ return ค่าที่มากที่สุดออกมา
