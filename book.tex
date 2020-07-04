@@ -24,11 +24,14 @@
 
 %% --- %%
 
+\usepackage{etoolbox}
 \usepackage[a4paper,top=1in,bottom=1in,left=1in,right=1in]{geometry}
 \usepackage{indentfirst}
 \usepackage{apacite}
 \usepackage{enumitem}
 \usepackage{titlesec}
+
+\setlist[itemize]{noitemsep,nolistsep,topsep=0pt}
 
 \titleformat{\chapter}[display]
 {\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\Huge}
@@ -72,6 +75,7 @@
 \listoftables
 
 \mainmatter
+\include{lesson_plan}
 \include{introduction}
 \include{python_elements}
 \include{conditional_statements}
