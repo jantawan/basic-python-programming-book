@@ -41,6 +41,9 @@
 \renewcommand{\baselinestretch}{1.5}
 \renewcommand{\contentsname}{สารบัญ}
 \renewcommand{\chaptername}{บทที่}
+\renewcommand{\listfigurename}{สารบัญรูป}
+\renewcommand{\figurename}{รูปที่}
+\renewcommand{\listtablename}{สารบัญตาราง}
 
 \begin{document}
 \newmintinline{py}{python3}
@@ -65,6 +68,8 @@
 \maketitle
 \include{preface}
 \tableofcontents
+\listoffigures
+\listoftables
 
 \mainmatter
 \include{introduction}
