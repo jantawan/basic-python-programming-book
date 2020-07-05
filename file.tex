@@ -9,41 +9,197 @@
 
 การเรียกใช้โมดูล os ต้องใช้คำสั่ง import os ก่อนแล้วจะสามารถใช้คำนั่งในโมดูลได้ เช่น os.getcwd() ใช้แสดง Directory ที่กำลังทำงานอยู่ ส่วนคำนั่ง os.chdir() คือการเปลี่ยนตำแหน่งการทำงานของ Directory
 
+\begin{pycode}
+%>>> import os
+%>>> os.getcwd()
+%\rq{'c:\\Users\\\\janta\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python37-32'}		
+%>>> os.chdir('c:\\\\Users\\\\janta\\\\Desktop')
+\end{pycode}
+
 คำสั่งอื่นๆ เช่น 
 
 \begin{itemize}
-\item 	os.path.abspath('file.txt') 
-\item 	os.path.exists('file.txt') 
-\item 	os.path.isdir('file.txt') 
-\item 	os.path.isdir(os.getcwd()) 
-\item 	os.listdir(os.getcwd())
+\item 	\pyinline{os.path.abspath('file.txt')}
+\item 	\pyinline{os.path.exists('file.txt')} 
+\item 	\pyinline{os.path.isdir('file.txt')} 
+\item 	\pyinline{os.path.isdir(os.getcwd())} 
+\item 	\pyinline{os.listdir(os.getcwd())}
 \end{itemize}
+
+\begin{pycode}
+>>> os.path.isdir(os.getcwd())
+True
+>>> os.listdir(os.getcwd())
+['DLLs', 'Doc', 'include', 'Lib', 'libs', 'LICENSE.txt', 'NEWS.txt', 'python.exe', 'python3.dll', 'python38.dll', 'pythonw.exe', 'Scripts', 'tcl', 'Tools', 'vcruntime140.dll']
+>>>
+\end{pycode}
+
 
 \section{การเปิดไฟล์}
 
-ฟังก์ชัน open() มีไว้เพื่อเปิดไฟล์ ก่อนที่จะเริ่มทำงานกับไฟล์ทุกครั้งจะต้องทำการเปิดไฟล์ก่อน โดยมีรูปแบบการเขียนคือ fout = open(filename, flag) ซึ่ง Filename คือ ชื่อไฟล์ที่ต้องการเปิด ส่วน Flag คือ รูปแบบในการเปิดไฟล์ ซึ่งมีหลายแบบ เช่น r ใช้อ่านข้อมูลอย่างเดียว w ใข้เขียนข้อมูลลงในไฟล์ใหม่ที่ไม่ได้สร้างไว้ก่อนหน้า a ใช้เขียนต่อท้ายไฟล์เดิม เป็นต้น และทุกครั้งหลังใช้งานไฟล์เสร็จแล้ว จะต้องทำการปิดไฟล์ด้วยคำสั่ง close()
+ฟังก์ชัน\pyinline{open()} มีไว้เพื่อเปิดไฟล์ ก่อนที่จะเริ่มทำงานกับไฟล์ทุกครั้งจะต้องทำการเปิดไฟล์ก่อน โดยมีรูปแบบการเขียนคือ \pyinline{fout = open(filename, flag)} ซึ่ง Filename คือ ชื่อไฟล์ที่ต้องการเปิด ส่วน Flag คือ รูปแบบในการเปิดไฟล์ ซึ่งมีหลายแบบ เช่น r ใช้อ่านข้อมูลอย่างเดียว w ใข้เขียนข้อมูลลงในไฟล์ใหม่ที่ไม่ได้สร้างไว้ก่อนหน้า a ใช้เขียนต่อท้ายไฟล์เดิม เป็นต้น และทุกครั้งหลังใช้งานไฟล์เสร็จแล้ว จะต้องทำการปิดไฟล์ด้วยคำสั่ง \pyinline{close()}
+
+\begin{pycode}
+%import os
+%os.chdir('c:\textbackslash\textbackslash Users\\janta\\Desktop')
+%fout = open('file.txt', 'w')
+%fout.write('The first line. \textbackslash n')
+%fout.write('The second line. \textbackslash n')
+%fout.write('The thrid line. \textbackslash n')
+%fout.close()
+
+\end{pycode}
+
 
 \section{การอ่านไฟล์}
 
-คำสั่ง read() จะทำการอ่านข้อมูลทั้งหมดในไฟล์เพียงครั้งเดียว และข้อมูลที่อ่านได้จะเป็น String ส่วนคำสั่ง readline() จะทำการอ่านข้อมูลทีละบรรทัดแล้วเก็บไว้เป็น String ทีละบรรทัดใน List
+คำสั่ง \pyinline{read()} จะทำการอ่านข้อมูลทั้งหมดในไฟล์เพียงครั้งเดียว และข้อมูลที่อ่านได้จะเป็น String ส่วนคำสั่ง \pyinline{readline()} จะทำการอ่านข้อมูลทีละบรรทัดแล้วเก็บไว้เป็น String ทีละบรรทัดใน List
 
 \section{การจัดการข้อผิดพลาด (Error)}
 
 การเขียนโปรแกรมเพื่อให้สามารถจัดการเหตุการณ์ที่คาดไม่ถึงได้ อาทิ เปิดไฟล์ไม่ได้เพราะ Hard disk มีปัญหา หรือ Network มีปัญหา สามารถเขียนโปรแกรมให้แสดง Error message ออกมาได้ โดยใช้ Try and Except statements สำหรับ \pyinline{FileNotFoundError} เช่น ในการเปิดไฟล์ที่ยังไม่ได้สร้างไฟล์ไว้ก่อนหน้า แล้วต้องการให้ Error message แสดงออกมาว่า  File not found!
 
+Source code:
+\begin{pycode}
+try:
+    fin = open('abcdef.txt')
+except FileNotFoundError:
+    print('File not found.')
+\end{pycode}
+
+Result:
+\begin{pycode}
+>>>
+File not found.
+>>>
+\end{pycode}
+
 นอกจากนี้ยังมี finally statement จะทำงานท้ายสุดไม่ว่าจะประสบความสำเร็จหรือไม่ก็ตาม อ่านเพิ่มเติมเรื่อง eexception handling ได้ที่ \url{https://docs.python.org/3/library/exceptions.html\#bltin-exceptions}
+
+Source code:
+\begin{pycode}
+try:
+    fin = open('file.txt')
+except:
+    print('File not found.')
+finally:
+    print('Finally...everything is ok.')
+\end{pycode}
+
+Result:
+\begin{pycode}
+>>>
+Finally...everything is ok.
+>>>
+\end{pycode}
+
+Source code:
+\begin{pycode}
+def print_james(name):
+    if name == 'James':
+        print('Hello James.')
+    else:
+        raise Exception('Name is not James.')
+
+print_james('Jake')
+\end{pycode}
+
+Result:
+\begin{pycode}
+%Traceback (most recent call last):
+ % File "C:\Users\janta\OneDrive\Documents\Python 1_63\01_Overview\code01.py", line 30, in <module>
+  %  print_james('Jake')
+ % File "C:\Users\janta\OneDrive\Documents\Python 1_63\01_Overview\code01.py", line 28, in print_james
+  %  raise Exception('Name is not James.')
+%Exception: Name is not James.
+
+\end{pycode}
+
+
 
 \section{ฐานข้อมูลแบบ Key-Value}
 
 Databases คือ ไฟล์แบบ Binary ที่เก็บข้อมูลในเครื่องคอมพิวเตอร์ที่เก็บในลักษณะ Key และ Value เหมือน Dictionary โดยจะต้องมีการ import โมดูล dbm ก่อนซึ่งเป็นการจัดการเกี่ยวกับ Database และผลลัพธ์ที่ได้จากการอ่านไฟล์ Database จะมีการแสดงตัวอักษร b ไว้ด้านหน้าเพื่อแสดงความเป็น Binary
 
+Source code:
+\begin{pycode}
+import dbm
+db = dbm.open('stocks.db', 'c')
+db['ptt']='360'
+db['scb']='160'
+print(db['ptt'])
+print(db['scb'])
+db.close()
+\end{pycode}
+
+Result:
+\begin{pycode}
+>>>
+b'360'
+b'160'
+>>>
+\end{pycode}
+
+
 การ Pickling เซฟข้อมูลเป็นอย่างอื่นนอกจาก text ดังนั้นให้แปลงอย่างอื่นให้เป็น text แล้วแปลงเป็น object เพื่อดึงกลับขึ้นมา
 
 เริ่มต้นด้วยการ import pickle เช่น ให้ list ชื่อว่า t1 แล้วทำการ dumps(t1) ให้กลายเป็น string ตอนนี้ก็จะสามารถเอา string ไปเก็บในไฟล์ข้อมูลหรือเก็บใน key-value database ก็ได้ และเมื่อต้องการเรียกนำกลับมาใช้ในสภาพเดิมให้ใช้คำสั่ง loads(s) 
 
+\begin{pycode}
+>>> import pickle
+>>> t = [1,2,3,4,5,6,7]
+>>> t
+[1,2,3,4,5,6,7]
+>>> t1 = t
+>>> t1
+[1,2,3,4,5,6,7]
+>>> s = pickle.dumps(t1)
+>>> s
+% b'\x80\x04\x95\x13\x00\x00\x00\x00\x00\x00\x00]\x94(K\x01K\x02K\x03K\x04K\x05K\x06K\x07e.'
+>>> t2 = pickle.loads(s)
+>>> t2
+[1, 2, 3, 4, 5, 6, 7]
+>>> id(t1)
+66507840
+>>> id(t2)
+63748456
+\end{pycode}
+
+
+
 \section{การให้ Python เรียกใช้โปรแกรมอื่น}
 
 การให้ Python เรียกใช้โปรแกรมอื่นได้ (Piping) โดยใช้โมดูล os และใช้ฟังก์ชัน popen()  อาทิ ตั้งตัวแปรชื่อ cmd เรียกใช้คำสั่ง dir ของ Windows OS ด้วยคำสั่ง popen แล้วนำผลจากคำสั่งนั้นมาเก็บเป็น String ไว้ในตัวแปรชื่อ result 
+
+Source code:
+\begin{pycode}
+import os
+os.chdir('c:\\users\\janta\\Desktop')
+cmd = 'dir'
+fp = os.popen(cmd)
+result = fp.read()
+fp.close()
+print(result)
+
+\end{pycode}
+
+Result:
+\begin{pycode}
+Volume in drive C has no label.
+Volume Serial Number is 2E09-DC35
+Directory of c:\users\janta\Desktop
+07/05/2020  01:34 PM    <DIR>          .
+07/05/2020  01:34 PM    <DIR>          ..
+07/03/2020  05:46 PM            52,422 560gra01.png
+07/05/2020  01:34 PM            29,887 5f83b4e260d668989b715e8bf0e3e288.jpg
+07/02/2020  07:04 PM           299,334 latexsheet-a4.pdf
+07/03/2020  06:22 PM        14,832,375 Manual_MS-Teams_Full.pdf
+07/03/2020  06:11 PM             2,394 Microsoft Teams.lnk
+               5 File(s)     15,216,412 bytes
+               2 Dir(s)  90,572,718,080 bytes free
+\end{pycode}
+
+
 
 \section{แบบฝึกหัด}
 \begin{enumerate} 
