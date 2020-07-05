@@ -3,16 +3,60 @@
 
 ดิกชันนารี (Dictionary) คือประเภทข้อมูลที่เก็บข้อมูลในเป็นคู่ๆ ของ Key และ Value โดยที่ Key ใช้สำหรับเป็น Index ในการเข้าถึงข้อมูล Value ของ Key นั้นๆ การสร้าง Dictionary เปล่าจะเขียนอยู่ภายในวงเล็บปีกกา { } หรือ dict() ส่วนการใส่ค่าใน Dictionary จะเขียนอยู่ในวงเล็บปีกกา แต่ละคู่จะขึ้นต้น key ตามด้วย : แล้วตามด้วย value และคั่นคู่ด้วยเครื่องหมาย comma (,) 
 
+\begin{pycode}
+>>> stocks = {'scb':160, 'ptt':360}
+>>> stocks
+{'scb':160, 'ptt':360}
+\end{pycode}
+
+
 \section{การอ่านค่าในดิกชันนารี}
 
-การอ่านค่าใน Dictionary ด้วยคำสั่ง for หรือการใช้ Dictionary เป็น Iterators เมื่อมีการประกาศค่าของ Dictionary แล้ว for จะวนอ่านค่าใน Dictionary ทีละตัว เช่น for key in stocks: print(key, stocks[key])
+การอ่านค่าใน Dictionary ด้วยคำสั่ง for หรือการใช้ Dictionary เป็น Iterators เมื่อมีการประกาศค่าของ Dictionary แล้ว for จะวนอ่านค่าใน Dictionary ทีละตัว เช่น \pyinline{for key in stocks: print(key, stocks[key])}
+
+Source code:
+\begin{pycode}
+stocks = {'scb':160, 'ptt':360}
+for key in stocks:
+    print('{0} = {1}' .format(key, stocks[key]))
+\end{pycode}
+
+Result:
+\begin{pycode}
+ptt = 360
+scb = 160
+\end{pycode}
+
 
 \section{การหาค่าของคีย์ (Key) ใน Dictionary}
 การหาค่าของคีย์ในดิกชันนารีเมื่อรู้ value เช่น สร้างฟังก์ชัน \pyinline{reverse_lookup()} มีการส่ง Parameters สองตัวคือ Dictionary กับ Value สำหรับ Key แต่ละตัวใน Dictionary นี้ ถ้า ค่าของ Dictionary เท่ากับ Value ที่ต้องการ ให้ส่งค่า Key กลับมา แต่ถ้าไม่มีก็จะไม่ต้องส่งอะไรออกมา
 
+Source code:
+\begin{pycode}
+def reverse_lookup(d,v):
+    for key in d:
+        if d[key] == v: return key
+    return None
+\end{pycode}
+
+Result:
+\begin{pycode}
+>>> reverse_lookup(stocks, 160)
+'scb'
+\end{pycode}
+
+
 \section{Dictionary และ List}
 
 keys() method จะแสดง keys ออกมา ส่วน values() method จะแสดง values ออกมา 
+
+\begin{pycode}
+>>> stocks.keys()
+dict_keys(['ppt','scb'])
+>>> stocks.values()
+dict_values([360,160])
+\end{pycode}
+
 
 ดังนั้น stocks.keys() และ stocks.values() คือ ลิสต์สองตัว ตัวหนึ่งเป็น keys อีกตัวเป็น values ที่ map เข้าหากัน จำไว้ว่า ค่าของลิสต์หรือ dictionary สามารถเป็นได้ทั้งลิสต์และ dictionary ด้วย
 
@@ -20,7 +64,37 @@ keys() method จะแสดง keys ออกมา ส่วน values() meth
 
 เมื่อไรก็ตามที่ต้องการสร้างฟังก์ชันที่รับ Parameters ได้ไม่จำกัดจำนวนและบอก Keywords ได้ด้วย ให้ใส่เครื่องหมายดอกจัน (*) สองครั้งไว้หน้า Parameters หมายความว่าสิ่งที่ผ่านเข้ามาทาง Parameters จะเป็น Dictionary 
 
+Source code:
+\begin{pycode}
+def printall(**kwargs):
+    for key in kwargs:
+        print(key + ' ' + str(kwargs[key]))
+\end{pycode}
+Result:
+\begin{pycode}
+>>> printall(x=1, y=2, z=3)
+y 2
+z 3
+x 1
+\end{pycode}
+
 แต่หากต้องการให้ Arguments หรือ Parameters ที่รับเข้ามาเป็น list ให้ใส่เครื่องหมายดอกจัน (*) หนึ่งครั้งไว้หน้า Parameters 
+
+Source code:
+\begin{pycode}
+def printall(*args):
+    for x in args:
+        print(x)
+\end{pycode}
+Result:
+\begin{pycode}
+>>> printall(1,2,3,4,5)
+1
+2
+3
+4
+5
+\end{pycode}
 
 \section{แบบฝึกหัด}
 
