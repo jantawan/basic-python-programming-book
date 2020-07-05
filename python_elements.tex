@@ -15,11 +15,31 @@
 \item ตัวพิมพ์เล็กและตัวพิมพ์ใหญ่เป็นตัวแปรคนละตัวกัน (Case-Sensitive) เช่น Name ไม่ใช่ตัวแปรเดียวกันกับ name 
 \item ใช้ใส่เครื่องหมาย = ในการตั้งตัวแปรหรือให้ค่าแก่ตัวแปร
 \item การตั้งชื่อตัวแปรควรตั้งอย่างสมเหตุสมผล 
-\item ภาษา Python จะมีคำที่ถูกสงวนไว้ในการเขียนโปรแกรม หรือ Keywords ซึ่งห้ามนำมาใช้ในการตั้งชื่อตัวแปร ชื่อฟังก์ชัน หรือ ชื่อคลาส 
-
+\item ภาษา Python จะมีคำที่ถูกสงวนไว้ในการเขียนโปรแกรม หรือ Keywords ซึ่งห้ามนำมาใช้ในการตั้งชื่อตัวแปร ชื่อฟังก์ชัน หรือ ชื่อคลาส
 \end{enumerate}
 
 มีดังต่อไปนี้ \cite{lutz2014}
+
+\begin{table}
+\centering
+\begin{tabu}{l l l l l}
+\rowfont{\ttfamily}
+False & class & finally & is & return \\
+\rowfont{\ttfamily}
+None & continue & for & lambda & try \\
+\rowfont{\ttfamily}
+True & def & from & nonlocal & while \\
+\rowfont{\ttfamily}
+and & del & global & not & with \\
+\rowfont{\ttfamily}
+as & elif & if & or & yield \\
+\rowfont{\ttfamily}
+assert & else & import & pass & break \\
+\rowfont{\ttfamily}
+except & in & raise && \\
+\end{tabu}
+\caption{คำสงวนในภาษา Python}
+\end{table}
 
 ตัวแปรจะชี้ไปที่หน่วยความจำในเครื่องคอมพิวเตอร์ซึ่งเก็บค่าของตัวแปรหรือ Value นั้นๆ อยู่ ฉะนั้นเมื่อเราพิมพ์ \pyinline{a} ดังในตัวอย่าง คอมพิวเตอร์จึงแสดงเลข 1 ออกมา นอกจากนี้พื้นที่ที่เก็บค่านั้นนั้นจะมีที่อยู่อยู่บนหน่วยความจำมีหมายเลขประจำตำแหน่งอีกด้วย โดยใช้คำสั่ง \pyinline{id()} เพื่อแสดงเลขประจำตำแหน่ง
 
