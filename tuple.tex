@@ -3,18 +3,105 @@
 
 Tuple จะคล้ายกับ List แต่สิ่งที่แตกต่างกันคือ Tuple นั้นเป็นประเภทข้อมูลที่ไม่สามารถเปลี่ยนแปลงได้ เมื่อไม่ต้องการให้ส่วนใดส่วนหนึ่งของโปรแกรมเผลอไปเปลี่ยน Value ก็ควรใช้ Tuple การสร้าง Tuple นั้น จะอยู่ภายในวงเล็บ () และคั่นค่าแต่ละตัวด้วยเครื่องหมายคอมมา (,) ส่วนการเข้าถึงค่าใน Tuple ใช้ index เหมือนกับ list
 
+\begin{pycode}
+>>> t = 'a', 'b', 'c'
+>>> t
+('a', 'b', 'c')
+>>> t = 'a',
+>>> t
+('a',)
+>>>
+\end{pycode}
+
+\begin{pycode}
+>>> t = ('a', 'b', 'c')
+>>> t[0]
+'a'
+>>> t[1]
+'b'
+>>> t[1:]
+('b', 'c')
+>>> t[0] = 'z'
+Traceback (most recent call last):
+    File ''<pyshell#16>'', line 1, in <module>
+        t[0] = 'z'
+TypeError: 'tuple' object does not support item assignment
+>>>
+\end{pycode}
+
+
 \section{การสลับค่าของ Tuple}
 
 การสลับค่าของ Tuple สามารถเขียน a, b = b, a และสามารถกำหนดค่าจาก String มาเป็น Tuple ได้ด้วยคำสั่ง split() เช่น username, domain = 'support@classstart.org'.split('@')
+
+\begin{pycode}
+>>> username, domain = 'support@classstart.org'.split('@')
+>>> username
+'support'
+>>> domain
+'classstart.org'
+>>>
+\end{pycode}
+
 
 \section{การเก็บค่าการดำเนินการใน Tuple}
 
 เราสามารถใช้ Tuple ในการเก็บค่าที่ได้จากการดำเนินการได้โดยตรง เช่น  floor, remainder = divmod(7, 3) โดยที่ floor คือ ค่าจำนวนเต็มที่ได้จากการหาร ส่วน remainder คือค่าของเศษที่ได้จากการหาร
 
+\begin{pycode}
+>>> t = divmod(7,3)
+>>> t
+(2, 1)
+>>> floor, remainder = divmod(7,3)
+>>> floor
+2
+>>> remainder
+1
+\end{pycode}
+
+Source code:
+\begin{pycode}
+def split_email(email):
+    return email.split('@')
+\end{pycode}
+
+Result:
+\begin{pycode}
+>>> username, domain = split_email('support@classstart.org')
+>>> username
+'support'
+>>> domain
+'classstart.org'
+>>>
+\end{pycode}
+
 \section{ฟังก์ชัน \pyinline{list()} เปลี่ยน tuple ให้เป็น list}
+
+\begin{pycode}
+>>> t = (1,2,3,4,5)
+>>> t
+(1,2,3,4,5)
+>>> type(t)
+|<class \rq{}tuple\rq{}>|
+>>> mylist = list(t)
+>>> mylist
+[1,2,3,4,5]
+>>>
+\end{pycode}
+
+
 \section{Dictionary และ Tuple}
 
 เมธอด items() ของ Dictionary จะให้ค่าเป็น List  ของ Tuples โดย Tuples แต่ละตัวคือ Key และ Value 
+
+\begin{pycode}
+>>> d = {'ppt' : 360, 'scb' : 160}
+d
+{'ppt' : 360, 'scb' : 160}
+>>> d.items()
+dict_items([('ppt', 360),('scb', 160)])
+\end{pycode}
+
 
 สรุปความแตกต่างในการใช้ Data Types คือถ้าหากต้องการลำดับของอักษร จะใช้ String ถ้าต้องการลำดับของค่าที่เปลี่ยนแปลงได้จะใช้ List ถ้าต้องการลำดับของค่าที่เปลี่ยนแปลงไม่ได้จะใช้ Tuple ถ้าต้องการคู่ลำดับของ Key กับ Value จะใช้ Dictionary
 
