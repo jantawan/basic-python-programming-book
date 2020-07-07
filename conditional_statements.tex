@@ -4,7 +4,7 @@
 
 Boolean Expressions คือ การดำเนินการเปรียบเทียบค่าเพื่อให้ได้ผลลัพธ์ออกมาเป็นถูก (True) หากเงื่อนไขเป็นจริง หรือผิด (False) หากเงื่อนไขเป็นเท็จ เช่น ค่าของ x มากกว่าค่าของ y ใช่หรือไม่ ซึ่งผลลัพธ์จะออกมาเป็นถูกหรือผิด
 
-\begin{pycode}
+\begin{codelist}{}{}
 >>> a = 5
 >>> b = 6
 >>> a == b
@@ -15,7 +15,7 @@ False
 True
 >>> 5 >= 6
 False
-\end{pycode}
+\end{codelist}
 
 
 \section{ตัวดำเนินการทางตรรกศาสตร์ (Logical Operators)}
@@ -24,12 +24,12 @@ False
 
 ตัวอย่างการใช้ตัวดำเนินการทางตรรกศาสตร์ในภาษา Python
 
-\begin{pycode}
+\begin{codelist}{}{}
 >>> a = -4
 >>> b = -2
 >>> a > 2 or c > b and c> 2
 False
-\end{pycode}
+\end{codelist}
 
 
 \section{การใช้คำสั่ง if เพื่อเลือกเงื่อนไข}
@@ -38,50 +38,50 @@ False
 
 รูปแบบของการใช้งานคำสั่ง if ในภาษา Python โดยถ้าหากเงื่อนไขเป็นจริง ตัวโปรแกรมจะประมวลผลในคำสั่ง if หลังเครื่องหมาย : 
 
-\begin{pycode}
+\begin{codelist}{}{}
 if expresion:
     #statements
-\end{pycode}
+\end{codelist}
 
 ตัวอย่างเช่น ให้แสดงข้อความว่า อายุต่ำกว่าเกณฑ์ ถ้าหากค่าอายุที่รับเข้ามาต่ำกว่า 18 ปี
 
 Source code:
-\begin{pycode}
+\begin{codelist}{}{}
 age = int(input('Enter your age: `))
 if age < 18:
    print('You are underage.')
-\end{pycode}
+\end{codelist}
 
 Result:
-\begin{pycode}
+\begin{codelist}{}{}
 Enter your age: 15
 You are underage.
-\end{pycode}
+\end{codelist}
 
 
 \section{การใช้ if กับ else}
 
 โครงสร้างคำสั่ง if…else จะดำเนินในบล็อคคำสั่ง else ถ้าหากเงื่อนไขในคำสั่ง if นั้นเป็นเท็จ โดยมีรูปแบบการเขียนดังนี้
 
-\begin{pycode}
+\begin{codelist}{}{}
 if expression:
     # statements
 else:
     # statements
-\end{pycode}
+\end{codelist}
 
 Source code:
-\begin{pycode}
+\begin{codelist}{}{}
 x = 15
 y = 6
 if x > y: print('x is greater than y.')
 else: print('x is less than or equal to y.')
-\end{pycode}
+\end{codelist}
 
 Result:
-\begin{pycode}
+\begin{codelist}{}{}
 x is greater than y.
-\end{pycode}
+\end{codelist}
 
 
 \section{Chained Expressions}
@@ -89,18 +89,18 @@ x is greater than y.
 การใช้ Chained Expressions คือ การใส่ elif ไปเรื่อยๆ และเงื่อนไขสุดท้ายจะต้องใช้ else โดยไม่ต้องการระบุ Boolean Expressions ใดๆ อีกแล้วหลังจากที่ใส่ else
 
 Source code:
-\begin{pycode}
+\begin{codelist}{}{}
 x = 6
 y = 6
 if x > y: print('x is greater than y.')
 elif x < y: print('x is less than y.')
 else: print('x and y are equal.')
-\end{pycode}
+\end{codelist}
 
 Result:
-\begin{pycode}
+\begin{codelist}{}{}
 x and y are equal.
-\end{pycode}
+\end{codelist}
 
 
 \section{Nested Expressions}
@@ -108,19 +108,19 @@ x and y are equal.
 if มี Statement อยู่ข้างในได้ และ else ก็มี Statement อยู่ข้างในได้เช่นกัน เรียกว่า Nested Expressions
 
 Source code:
-\begin{pycode}
+\begin{codelist}{}{}
 x = 7
 y = 6
 if x == y: print('x and y are equal.')
 else:
     if x < y: print('x is less than y.')
     else: print('x is greater than y.')
-\end{pycode}
+\end{codelist}
 
 Result:
-\begin{pycode}
+\begin{codelist}{}{}
 x is greater than y.
-\end{pycode}
+\end{codelist}
 
 \section{แบบฝึกหัด}
 

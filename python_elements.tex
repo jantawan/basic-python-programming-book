@@ -105,7 +105,7 @@ except & in & raise && \\
 
 เครื่องหมายสำหรับการคำนวณเรียกว่า  Arithmetic Operators เช่น เครื่องหมายบวก ลบ คูณ หาร การยกกำลัง การหารเอาเศษ การหารเอาจำนวนเต็ม เป็นต้น การคำนวณทางคณิตศาสตร์แบบซับซ้อนจะต้องมีลำดับในการคำนวณซึ่งเหมือนกับการคำนวณคณิตศาสตร์ทั่วไป คือ ในการแก้สมการทางคณิตศาสตร์จะต้องทำในวงเล็บก่อน ตามด้วยเลขยกกำลัง แล้วจึงตามด้วย คูณหรือหารโดยคำนวณจากซ้ายไปขวา แล้วตามด้วยบวกหรือลบโดยคำนวณจากซ้ายไปขวาเช่นกัน โดยให้จำคำว่า PEMDAS ซึ่งเป็นตัวอักษร ภาษาอังกฤษตัวแรกของคำว่า Parentheses (วงเล็บ), Exponents (ยกกำลัง), Multiply (คูณ), Divide (หาร), Add (บวก), และ Subtract (ลบ) 
 
-\begin{pycode}
+\begin{codelist}{}{}
 >>> a
 1
 >>> b
@@ -131,7 +131,7 @@ except & in & raise && \\
 2
 >>> b ** 2
 4
-\end{pycode}
+\end{codelist}
 
 
 \subsection{รูปแบบการเขียนการคำนวณทางคณิตศาสตร์}
@@ -140,7 +140,7 @@ except & in & raise && \\
 
 เครื่องหมายที่เป็นการคำนวณทางคณิตศาสตร์เมื่อถูกนำมาใช้กับข้อความ (String) จะเป็นอีกความหมายหนึ่ง เช่น การใช้เครื่องหมายบวกเชื่อมต่อระหว่างสตริง 2 ตัว หรือ การใช้เครื่องหมายดอกจันเป็นการเพิ่มสตริงเดียวกันตามจำนวนครั้งของการคูณ
 
-\begin{pycode}
+\begin{codelist}{}{}
 >>> firstname
 'Jantawan'
 >>> lastname
@@ -151,39 +151,39 @@ except & in & raise && \\
 'Jantawan Piyawat'
 >>> firstname * 3
 'JantawanJantawanJantawan'
-\end{pycode}
+\end{codelist}
 
 
 \section{Expressions และ Statements}
 
 Expressions หมายถึงการใช้เครื่องหมายคำนวณและการใช้ตัวแปรและค่าของตัวแปรเพื่อหาผลลัพธ์ออกมา เอา Expression มาประกอบกันจะเรียกว่า Statement ดังนั้น Statement ก็คือคำสั่งเรียงต่อกันนั่นเองเพื่อใช้ในการสั่งงานคอมพิวเตอร์ด้วยภาษาคอมพิวเตอร์
 
-\begin{pycode}
+\begin{codelist}{}{}
 >>> 1+2
 |3|
-\end{pycode}
+\end{codelist}
 
-\begin{pycode}
+\begin{codelist}{}{}
 >>> c = a + b
 >>> c
 |3|
 >>> print('hello world.')
 |hello world.|
 
-\end{pycode}
+\end{codelist}
 
 
 \section{การเขียนข้อความอธิบายโปรแกรมโดยการใช้ Comment}
 
 Comment คือสิ่งที่เราเขียนใน Source Code ของโปรแกรมแต่คอมพิวเตอร์ไม่ต้องแปลผล เพื่อใช้ในการเขียนข้อความประกอบคำอธิบายในการสื่อสารระหว่างโปรแกรมเมอร์ด้วยกัน หรือเป็นการเตือนความจำของโปรแกรมเมอร์เอง โดย Comment ในภาษา Python นำหน้าด้วยเครื่องหมายชาร์ป (\#) แล้วหลังจากนั้นตามด้วยข้อความอะไรก็ได้ ถ้าจะเขียน Comment หลายๆ บรรทัดจะต้องใช้เครื่องหมายฟันหนู ('') หรือฝนทอง (')  3 ตัว แล้วก็พิมพ์ข้อความแล้วจึงปิดด้วยฟันหนู ('') หรือฝนทองทั้ง 3 ตัวอีกครั้ง (') ผลที่ได้จะมีเครื่องหมาย Backslash n (\textbackslash n) หมายถึงการขึ้นบรรทัดใหม่
 
-\begin{pycode}
+\begin{codelist}{}{}
 >>> print('Hello world!')
 |Hello world!|
 >>> # Hello how are you doing?
-\end{pycode}
+\end{codelist}
 
-\begin{pycode}
+\begin{codelist}{}{}
 >>> x = '''
 hello
 1
@@ -197,7 +197,7 @@ hello
 1
 2
 3
-\end{pycode}
+\end{codelist}
 
 
 \section{Source code}
@@ -206,43 +206,43 @@ hello
 
 Source code:
 
-\begin{pycode}
+\begin{codelist}{}{}
 x = 7
 y = 6
 if x == y: print('x and y are equal.')
 else:
     if x < y: print('x is less than y.')
     else: print('x is greater than y.')
-\end{pycode}
+\end{codelist}
 
 Result:
 
-\begin{pycode}
+\begin{codelist}{}{}
 |x is greater than y.|
-\end{pycode}
+\end{codelist}
 
 
 \section{คำสั่ง \texttt{print} (ตัวแปรหรือข้อมูล)}
 
 print() เป็นฟังก์ชันที่ใช้ในการแสดงผลตัวแปรหรือข้อมูลออกทางหน้าจอ 
 
-\begin{pycode}
+\begin{codelist}{}{}
 >>> print('Hello world!')
 |Hello world!|
 >>>
-\end{pycode}
+\end{codelist}
 
 
 \section{การใช้คำสั่ง \texttt{input()} รับค่าจากแป้นพิมพ์}
 
 คำสั่ง input(ข้อความ prompt) เป็นคำสั่งสำหรับรับข้อมูลจากผู้ใช้ด้วยการพิมพ์ผ่านแป้นพิมพ์ 
 
-\begin{pycode}
+\begin{codelist}{}{}
 >>> name=input('What is your name? ')
 |What is your name? Jantawan|
 >>> print('Hello, ', name, end='.')
 Hello, Jantawan.
-\end{pycode}
+\end{codelist}
 
 
 \section{แบบฝึกหัด}

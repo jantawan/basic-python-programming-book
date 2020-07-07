@@ -7,18 +7,18 @@
 
 คำสั่ง  \pyinline{for} statement เป็นการทำงานซ้ำๆ ตามจำนวนครั้งที่ระบุไว้ เช่น การใช้  \pyinline{for} statement ร่วมกัน  \pyinline{range()} โดยมีรูปแบบการเขียนดังนี้
 
-\begin{pycode}
+\begin{codelist}{}{}
 for var in sequence:
     # statements
-\end{pycode}
+\end{codelist}
 
 Source code:
-\begin{pycode}
+\begin{codelist}{}{}
 for x in range(0,5): print(x)
-\end{pycode}
+\end{codelist}
 
 Result:
-\begin{pycode}
+\begin{codelist}{}{}
 >>>
 0
 1
@@ -26,27 +26,27 @@ Result:
 3
 4
 >>>
-\end{pycode}
+\end{codelist}
 
 \section{คำสั่ง  \pyinline{while}}
 
  \pyinline{while} Statement เป็นคำสั่งให้โปรแกรมทำงานวนซ้ำในขณะที่เงื่อนไขของการวนซ้ำนั้นยังคงเป็นจริงอยู่ และเมื่อเงื่อนไขเป็นเท็จจะสิ้นสุดการทำงานวนซ้ำนั้นทันที ดังนั้นจึงต้องมีตัวควบคุมในการเพิ่มค่าไปเรื่อยๆ จนเงื่อนไขเป็นเท็จ มีลักษณะการเขียนดังนี้
 
-\begin{pycode}
+\begin{codelist}{}{}
 while expression:
     # satements
-\end{pycode}
+\end{codelist}
 
 Source code:
-\begin{pycode}
+\begin{codelist}{}{}
 x = 0
 while x < 10:
     print(x)
     x = x + 1
-\end{pycode}
+\end{codelist}
 
 Result:
-\begin{pycode}
+\begin{codelist}{}{}
 0
 1
 2
@@ -57,23 +57,23 @@ Result:
 7
 8
 9
-\end{pycode}
+\end{codelist}
 
 \section{คำสั่ง  \pyinline{break}}
 
 คำสั่ง  \pyinline{break} เพื่อให้หลุดการทำงานในลูป
 
 Source code:
-\begin{pycode}
+\begin{codelist}{}{}
 x = 0
 while True:
     print(x)
     if x == 10: break
     x = x +1
-\end{pycode}
+\end{codelist}
 
 Result:
-\begin{pycode}
+\begin{codelist}{}{}
 0
 1
 2
@@ -85,7 +85,7 @@ Result:
 8
 9
 10
-\end{pycode}
+\end{codelist}
 
 
 \section{ฟังก์ชันที่เรียกตัวเอง (Recursion)}
@@ -93,16 +93,16 @@ Result:
 Recursion คือการเรียกใช้ฟังก์ชันซ้อนฟังก์ชันนั้นๆ เอง หรือ ฟังก์ชันเรียกใช้ตัวมันเอง จากฟังก์ชัน  \pyinline{countdown()} ในตัวอย่าง เมื่อมีการเรียกฟังก์ชัน  \pyinline{countdown(5)} โปรแกรมจะทำงานลดหลั่นลงไปเรื่อยๆ คือตั้งแต่ 5, 4, 3, 2, 1 ตราบเท่าที่ n ยังมากกว่า 0 แต่เมื่อเงื่อนไขเป็นเท็จแล้ว โปรแกรมจะแสดงคำว่า Go! แทน
 
 Source code:
-\begin{pycode}
+\begin{codelist}{}{}
 def countdown(n):
     if x > 0:
         print(n)
         countdown(n-1)
     else:
         print('Go.')
-\end{pycode}
+\end{codelist}
 Result:
-\begin{pycode}
+\begin{codelist}{}{}
 >>> countdown(5)
 5
 4
@@ -110,7 +110,7 @@ Result:
 2
 1
 Go.
-\end{pycode}
+\end{codelist}
 
 
 \section{แบบฝึกหัด}

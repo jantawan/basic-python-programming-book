@@ -33,6 +33,7 @@
 \usepackage{tabu}
 \usepackage[most]{tcolorbox}
 \tcbuselibrary{minted}
+\usepackage{float}
 
 \setlist[itemize]{noitemsep,nolistsep,topsep=0pt}
 
@@ -55,7 +56,7 @@
 %https://tex.stackexchange.com/a/343366
 \newenvironment{codelist}[3][]
  {\VerbatimEnvironment
-  \begin{figure}[h!]
+  \begin{figure}[H]
   \caption{#2}\label{#3}
   \begin{minted}[
     linenos,frame=single,framesep=10pt,escapeinside=||]{python3}}
