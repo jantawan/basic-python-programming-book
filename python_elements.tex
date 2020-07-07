@@ -43,19 +43,16 @@ except & in & raise && \\
 
 ตัวแปรจะชี้ไปที่หน่วยความจำในเครื่องคอมพิวเตอร์ซึ่งเก็บค่าของตัวแปรหรือ Value นั้นๆ อยู่ ฉะนั้นเมื่อเราพิมพ์ \pyinline{a} ดังในตัวอย่าง คอมพิวเตอร์จึงแสดงเลข 1 ออกมา นอกจากนี้พื้นที่ที่เก็บค่านั้นนั้นจะมีที่อยู่อยู่บนหน่วยความจำมีหมายเลขประจำตำแหน่งอีกด้วย โดยใช้คำสั่ง \pyinline{id()} เพื่อแสดงเลขประจำตำแหน่ง
 
-\begin{figure}[h]
-\begin{pycode}
+\begin{codelist}{เลขประจำตัวตำแหน่งของตัวแปร}{figure:idofvar}
 >>> a
 1
 >>> id(a)
 1538021648
-\end{pycode}
-\caption{เลขประจำตัวตำแหน่งของตัวแปร}
-\end{figure}
+\end{codelist}
 
 \section{ประเภทของข้อมูล (Types)}
 
-สิ่งที่อยู่ในหน่วยความจำมีประเภทของข้อมูลหรือ Type อยู่ด้วย โดยใช้คำสั่ง type() เพื่อดูประเภทของข้อมูล ในภาษา Python มีประเภทของข้อมูลหลายๆ แบบ \cite{Luc15}
+สิ่งที่อยู่ในหน่วยความจำมีประเภทของข้อมูลหรือ Type อยู่ด้วย โดยใช้คำสั่ง \pyinline{type()} เพื่อดูประเภทของข้อมูล ในภาษา Python มีประเภทของข้อมูลหลายๆ แบบ \cite{Luc15}
 
 \begin{enumerate}[noitemsep]
 \item none คือ Nothing ไม่มีอะไร 
@@ -65,7 +62,7 @@ except & in & raise && \\
 \item str หรือ String หรือข้อความซึ่งจะอยู่ภายใต้เครื่องหมาย `` (ฟันหนู) หรือ ` (ฝนทอง) เช่น ``This is my dog.''  หรือ `Jantawan'
 \end{enumerate}
 
-\begin{pycode}
+\begin{codelist}{ประเภทของข้อมูล}{}
 >>> a = 1
 >>> a
 1
@@ -81,10 +78,10 @@ except & in & raise && \\
 67626832
 >>> type(firstname)
 |<class \rq{}str\rq{}>|
-\end{pycode}
+\end{codelist}
 
 
-\begin{pycode}
+\begin{codelist}{}{}
 >>> n = None
 >>> n
 >>> id(n)
@@ -100,9 +97,7 @@ except & in & raise && \\
 72213072
 >>> type(degree)
 |<class \rq{}float\rq{}>|
-
-
-\end{pycode}
+\end{codelist}
 
 
 \section{เครื่องหมายสำหรับการคำนวณ}

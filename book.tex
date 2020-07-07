@@ -32,6 +32,7 @@
 \usepackage{titlesec}
 \usepackage{tabu}
 \usepackage[most]{tcolorbox}
+\tcbuselibrary{minted}
 
 \setlist[itemize]{noitemsep,nolistsep,topsep=0pt}
 
@@ -40,7 +41,7 @@
 \titlespacing*{\chapter}{0pt}{10pt}{10pt}
 
 \usepackage{minted}
-\setminted{fontsize=\small,baselinestretch=1}
+\setminted{fontsize=\small,baselinestretch=1,startinline=true}
 \newminted{py}{python3,linenos=true,frame=lines,framesep=10pt,escapeinside=||}
 
 \renewcommand{\baselinestretch}{1.5}
@@ -49,6 +50,16 @@
 \renewcommand{\listfigurename}{สารบัญรูป}
 \renewcommand{\figurename}{รูปที่}
 \renewcommand{\listtablename}{สารบัญตาราง}
+\renewcommand{\tablename}{ตารางที่}
+
+%https://tex.stackexchange.com/a/343366
+\newenvironment{codelist}[3][]
+ {\VerbatimEnvironment
+  \begin{figure}[h!]
+  \caption{#2}\label{#3}
+  \begin{minted}[
+    linenos,frame=single,framesep=10pt,escapeinside=||]{python3}}
+ {\end{minted}\end{figure}}
 
 \begin{document}
 \newmintinline{py}{python3}
