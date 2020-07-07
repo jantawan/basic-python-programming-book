@@ -11,15 +11,33 @@ Concept of programming, algorithm to solve the problem, flowchart, expression an
 
 \section{เนื้อหาวิชา}
 
-\subsection{สัปดาห์ที่ 1}
+% \lesson command definition
 
+\newcommand{\lesson}[3]{
+\subsection{สัปดาห์ที่ {#1}}
+%\begin{mdframed}
+\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries,title=สัปดาห์ที่ {#1}]
 \begin{description}
 
 \item[ผู้สอน] จันทวรรณ ปิยะวัฒน์
 \item[จำนวนชั่วโมงบรรยาย] 2
 \item[จำนวนชั่วโมงปฎิบัติ] 2
-
 \item[หัวข้อ/รายละเอียด] \hfill \\
+{#2}
+\item[กิจกรรมการเรียนการสอน/สื่อที่ใช้] \hfill
+\begin{itemize}[leftmargin=0pt]
+{#3}
+\end{itemize}
+
+\end{description}
+\end{tcolorbox}
+%\end{mdframed}
+}
+
+% --
+
+\lesson{1}
+{
 \underline{เค้าโครงวิชา}
 
 \begin{itemize}
@@ -50,14 +68,24 @@ Concept of programming, algorithm to solve the problem, flowchart, expression an
 \item การสมัครสมาชิก
 \item ฝึกการเขียนโปรแกรมง่าย ๆ (Game-based Learning) แบบ Block-based Programming
 \end{itemize}
-
-\item[กิจกรรมการเรียนการสอน/สื่อที่ใช้] \hfill
-\begin{itemize}[leftmargin=0pt]
+}
+{
 \item บรรยาย
 \item ปฎิบัติการใช้ระบบ ClassStart.org
 \item ปฎิบัติการเขียนโปรแกรมทางออนไลน์ที่ Code.org
-\end{itemize}
+}
 
-\end{description}
-
-\subsection{สัปดาห์ที่ 2}
+\lesson{2}{}{\item x}
+\lesson{3}{}{\item x}
+\lesson{4}{}{\item x}
+\lesson{5}{}{\item x}
+\lesson{6}{}{\item x}
+\lesson{7}{}{\item x}
+\lesson{8}{}{\item x}
+\lesson{9}{}{\item x}
+\lesson{10}{}{\item x}
+\lesson{11}{}{\item x}
+\lesson{12}{}{\item x}
+\lesson{13}{}{\item x}
+\lesson{14}{}{\item x}
+\lesson{15}{}{\item x}
