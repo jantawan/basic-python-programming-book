@@ -6,7 +6,7 @@
 
 \section{การตั้งชื่อตัวแปร}
 
-การตั้งชื่อตัวแปรมีเงื่อนไขดังนี้  \cite{lutz2014}
+การตั้งชื่อตัวแปรมีเงื่อนไขดังนี้
 
 \begin{enumerate}[noitemsep]
 \item ให้ขึ้นต้นด้วยอักษรตัวภาษาอังกฤษตัวใหญ่หรือตัวเล็กตั้งแต่ Aa ถึง Zz เท่านั้น 
@@ -16,41 +16,26 @@
 \item ใช้ใส่เครื่องหมาย = ในการตั้งตัวแปรหรือให้ค่าแก่ตัวแปร
 \item การตั้งชื่อตัวแปรควรตั้งอย่างสมเหตุสมผล 
 \item ภาษา Python จะมีคำที่ถูกสงวนไว้ในการเขียนโปรแกรม หรือ Keywords ซึ่งห้ามนำมาใช้ในการตั้งชื่อตัวแปร ชื่อฟังก์ชัน หรือ ชื่อคลาส 
+
 \end{enumerate}
 
-\begin{figure}[h]
-\caption{การตั้งค่าตัวแปร}
-\begin{pycode}
->>> a = 1
->>> a
-1
->>> b = 2
->>> b
-2
->>> a + b
-3
->>> vat =7
->>> vat
-7
-\end{pycode}
-\end{figure}
-
+มีดังต่อไปนี้ \cite{lutz2014}
 
 ตัวแปรจะชี้ไปที่หน่วยความจำในเครื่องคอมพิวเตอร์ซึ่งเก็บค่าของตัวแปรหรือ Value นั้นๆ อยู่ ฉะนั้นเมื่อเราพิมพ์ \pyinline{a} ดังในตัวอย่าง คอมพิวเตอร์จึงแสดงเลข 1 ออกมา นอกจากนี้พื้นที่ที่เก็บค่านั้นนั้นจะมีที่อยู่อยู่บนหน่วยความจำมีหมายเลขประจำตำแหน่งอีกด้วย โดยใช้คำสั่ง \pyinline{id()} เพื่อแสดงเลขประจำตำแหน่ง
 
 \begin{figure}[h]
-\caption{เลขประจำตัวตำแหน่งของตัวแปร}
 \begin{pycode}
 >>> a
 1
 >>> id(a)
 1538021648
 \end{pycode}
+\caption{เลขประจำตัวตำแหน่งของตัวแปร}
 \end{figure}
 
 \section{ประเภทของข้อมูล (Types)}
 
-สิ่งที่อยู่ในหน่วยความจำมีประเภทของข้อมูลหรือ Type อยู่ด้วย โดยใช้คำสั่ง \pyinline{type()} เพื่อดูประเภทของข้อมูล ในภาษา Python มีประเภทของข้อมูลหลายๆ แบบ \cite{Luc15}
+สิ่งที่อยู่ในหน่วยความจำมีประเภทของข้อมูลหรือ Type อยู่ด้วย โดยใช้คำสั่ง type() เพื่อดูประเภทของข้อมูล ในภาษา Python มีประเภทของข้อมูลหลายๆ แบบ \cite{Luc15}
 
 \begin{enumerate}[noitemsep]
 \item none คือ Nothing ไม่มีอะไร 
@@ -60,11 +45,6 @@
 \item str หรือ String หรือข้อความซึ่งจะอยู่ภายใต้เครื่องหมาย `` (ฟันหนู) หรือ ` (ฝนทอง) เช่น ``This is my dog.''  หรือ `Jantawan'
 \end{enumerate}
 
-ดังตัวอย่างที่แสดงในรูปที่ \ref{figure:typeofdata} ในหน้า \pageref{figure:typeofdata}
-
-\begin{figure}[h!]
-\label{figure:typeofdata}
-\caption{ประเภทของข้อมูล}
 \begin{pycode}
 >>> a = 1
 >>> a
@@ -81,6 +61,10 @@
 67626832
 >>> type(firstname)
 |<class \rq{}str\rq{}>|
+\end{pycode}
+
+
+\begin{pycode}
 >>> n = None
 >>> n
 >>> id(n)
@@ -96,23 +80,16 @@
 72213072
 >>> type(degree)
 |<class \rq{}float\rq{}>|
+
+
 \end{pycode}
-\end{figure}
+
 
 \section{เครื่องหมายสำหรับการคำนวณ}
 \subsection{การคำนวณทางคณิตศาสตร์ (Arithmetic Operators)}
 
 เครื่องหมายสำหรับการคำนวณเรียกว่า  Arithmetic Operators เช่น เครื่องหมายบวก ลบ คูณ หาร การยกกำลัง การหารเอาเศษ การหารเอาจำนวนเต็ม เป็นต้น การคำนวณทางคณิตศาสตร์แบบซับซ้อนจะต้องมีลำดับในการคำนวณซึ่งเหมือนกับการคำนวณคณิตศาสตร์ทั่วไป คือ ในการแก้สมการทางคณิตศาสตร์จะต้องทำในวงเล็บก่อน ตามด้วยเลขยกกำลัง แล้วจึงตามด้วย คูณหรือหารโดยคำนวณจากซ้ายไปขวา แล้วตามด้วยบวกหรือลบโดยคำนวณจากซ้ายไปขวาเช่นกัน โดยให้จำคำว่า PEMDAS ซึ่งเป็นตัวอักษร ภาษาอังกฤษตัวแรกของคำว่า Parentheses (วงเล็บ), Exponents (ยกกำลัง), Multiply (คูณ), Divide (หาร), Add (บวก), และ Subtract (ลบ) 
 
-
-\begin{figure}[h]
-\caption{ลำดับในการคำนวณ}
-\end{figure}
-
-ภาษา Python ใช้สัญลักษณ์คำนวณทางคณิตศาสตร์ดังนี้ \cite{Bil15} 
-
-\begin{figure}[h!]
-\caption{ตัวอย่างคำนวณทางคณิตศาสตร์}
 \begin{pycode}
 >>> a
 1
@@ -140,17 +117,14 @@
 >>> b ** 2
 4
 \end{pycode}
-\end{figure}
+
 
 \subsection{รูปแบบการเขียนการคำนวณทางคณิตศาสตร์}
-
 
 \subsection{การจัดการข้อความด้วยเครื่องหมายทางคณิตศาสตร์}
 
 เครื่องหมายที่เป็นการคำนวณทางคณิตศาสตร์เมื่อถูกนำมาใช้กับข้อความ (String) จะเป็นอีกความหมายหนึ่ง เช่น การใช้เครื่องหมายบวกเชื่อมต่อระหว่างสตริง 2 ตัว หรือ การใช้เครื่องหมายดอกจันเป็นการเพิ่มสตริงเดียวกันตามจำนวนครั้งของการคูณ
 
-\begin{figure}[h]
-\caption{ การจัดการข้อความด้วยเครื่องหมายทางคณิตศาสตร์}
 \begin{pycode}
 >>> firstname
 'Jantawan'
@@ -163,48 +137,37 @@
 >>> firstname * 3
 'JantawanJantawanJantawan'
 \end{pycode}
-\end{figure}
 
 
 \section{Expressions และ Statements}
 
 Expressions หมายถึงการใช้เครื่องหมายคำนวณและการใช้ตัวแปรและค่าของตัวแปรเพื่อหาผลลัพธ์ออกมา เอา Expression มาประกอบกันจะเรียกว่า Statement ดังนั้น Statement ก็คือคำสั่งเรียงต่อกันนั่นเองเพื่อใช้ในการสั่งงานคอมพิวเตอร์ด้วยภาษาคอมพิวเตอร์
 
-\begin{figure}[h!]
-\caption{Expressions}
 \begin{pycode}
 >>> 1+2
 |3|
 \end{pycode}
-\end{figure}
 
-\begin{figure}[h!]
-\caption{Statements}
 \begin{pycode}
 >>> c = a + b
 >>> c
 |3|
 >>> print('hello world.')
 |hello world.|
+
 \end{pycode}
-\end{figure}
+
 
 \section{การเขียนข้อความอธิบายโปรแกรมโดยการใช้ Comment}
 
 Comment คือสิ่งที่เราเขียนใน Source Code ของโปรแกรมแต่คอมพิวเตอร์ไม่ต้องแปลผล เพื่อใช้ในการเขียนข้อความประกอบคำอธิบายในการสื่อสารระหว่างโปรแกรมเมอร์ด้วยกัน หรือเป็นการเตือนความจำของโปรแกรมเมอร์เอง โดย Comment ในภาษา Python นำหน้าด้วยเครื่องหมายชาร์ป (\#) แล้วหลังจากนั้นตามด้วยข้อความอะไรก็ได้ ถ้าจะเขียน Comment หลายๆ บรรทัดจะต้องใช้เครื่องหมายฟันหนู ('') หรือฝนทอง (')  3 ตัว แล้วก็พิมพ์ข้อความแล้วจึงปิดด้วยฟันหนู ('') หรือฝนทองทั้ง 3 ตัวอีกครั้ง (') ผลที่ได้จะมีเครื่องหมาย Backslash n (\textbackslash n) หมายถึงการขึ้นบรรทัดใหม่
 
-\begin{figure}[h!]
-\caption{การใช้ Comment ในบรรทัดเดียว}
 \begin{pycode}
 >>> print('Hello world!')
 |Hello world!|
 >>> # Hello how are you doing?
 \end{pycode}
-\end{figure}
 
-
-\begin{figure}[h!]
-\caption{การใช้ Comment ในหลายบรรทัด}
 \begin{pycode}
 >>> x = '''
 hello
@@ -220,14 +183,14 @@ hello
 2
 3
 \end{pycode}
-\end{figure}
+
 
 \section{Source code}
 
 ที่ผ่านมาเป็นการเขียนโปรแกรมแบบ Interactive คือเขียนบน Python Shell แล้วโปรแกรมจะแสดงผลออกมาได้เลย ซึ่งเรียกว่าการทำงานแบบ Interpreter เป็นการใส่คำสั่งไปที่ Prompt และ Python จะแสดงผลของคำสั่งนั้นออกมาเลย แต่ในความเป็นจริงแล้วจะเขียนโปรแกรมหลายๆ บรรทัดแล้วสั่งโปรแกรมทำงานทีเดียวพร้อมกัน เราจะเขียนไว้ในไฟล์นั้นเรียกว่า Source Code โดยที่ Source Code ของภาษา Python นามสกุลจะเป็น .py เวลาใช้ที่โปรแกรม Idle ให้กดที่เมนู File เลือก New เขียน Source Code แล้วให้กด Run ถ้าหากจะกดรันโปรแกรมอีกสักครั้งให้กด F5
 
-\begin{figure}[h!]
-\caption{ตัวอย่าง Python source code}
+Source code:
+
 \begin{pycode}
 x = 7
 y = 6
@@ -236,38 +199,29 @@ else:
     if x < y: print('x is less than y.')
     else: print('x is greater than y.')
 \end{pycode}
-\end{figure}
 
-\begin{figure}[h!]
-\caption{ตัวอย่างผลลัพธ์ที่ได้จากการประมวลผล Source code}
+Result:
+
 \begin{pycode}
->>>
 |x is greater than y.|
->>>
 \end{pycode}
-\end{figure}
-
 
 
 \section{คำสั่ง \texttt{print} (ตัวแปรหรือข้อมูล)}
 
 print() เป็นฟังก์ชันที่ใช้ในการแสดงผลตัวแปรหรือข้อมูลออกทางหน้าจอ 
 
-\begin{figure}[h!]
-\caption{คำสั่ง print()}
 \begin{pycode}
 >>> print('Hello world!')
 |Hello world!|
 >>>
 \end{pycode}
-\end{figure}
+
 
 \section{การใช้คำสั่ง \texttt{input()} รับค่าจากแป้นพิมพ์}
 
 คำสั่ง input(ข้อความ prompt) เป็นคำสั่งสำหรับรับข้อมูลจากผู้ใช้ด้วยการพิมพ์ผ่านแป้นพิมพ์ 
 
-\begin{figure}[h!]
-\caption{คำสั่ง input()}
 \begin{pycode}
 >>> name=input('What is your name? ')
 |What is your name? Jantawan|
@@ -275,7 +229,6 @@ print() เป็นฟังก์ชันที่ใช้ในการแ
 Hello, Jantawan.
 \end{pycode}
 
-\end{figure}
 
 \section{แบบฝึกหัด}
 
