@@ -4,7 +4,7 @@
 
 Boolean Expressions คือ การดำเนินการเปรียบเทียบค่าเพื่อให้ได้ผลลัพธ์ออกมาเป็นถูก (True) หากเงื่อนไขเป็นจริง หรือผิด (False) หากเงื่อนไขเป็นเท็จ เช่น ค่าของ x มากกว่าค่าของ y ใช่หรือไม่ ซึ่งผลลัพธ์จะออกมาเป็นถูกหรือผิด
 
-\begin{codelist}{}{}
+\begin{codelist}{การใช้สัญลักษณ์เปรียบเทียบค่า}{}
 >>> a = 5
 >>> b = 6
 >>> a == b
@@ -24,7 +24,7 @@ False
 
 ตัวอย่างการใช้ตัวดำเนินการทางตรรกศาสตร์ในภาษา Python
 
-\begin{codelist}{}{}
+\begin{codelist}{ตัวอย่างการใช้ and or not}{}
 >>> a = -4
 >>> b = -2
 >>> a > 2 or c > b and c> 2
@@ -38,7 +38,7 @@ False
 
 รูปแบบของการใช้งานคำสั่ง if ในภาษา Python โดยถ้าหากเงื่อนไขเป็นจริง ตัวโปรแกรมจะประมวลผลในคำสั่ง if หลังเครื่องหมาย : 
 
-\begin{codelist}{}{}
+\begin{codelist}{รูปแบบของการใช้งานคำสั่ง if}{}
 if expresion:
     #statements
 \end{codelist}
@@ -46,14 +46,14 @@ if expresion:
 ตัวอย่างเช่น ให้แสดงข้อความว่า อายุต่ำกว่าเกณฑ์ ถ้าหากค่าอายุที่รับเข้ามาต่ำกว่า 18 ปี
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code จากโจทย์ตัวอย่าง}{}
 age = int(input('Enter your age: `))
 if age < 18:
    print('You are underage.')
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result จากโจทย์ตัวอย่าง}{}
 Enter your age: 15
 You are underage.
 \end{codelist}
@@ -63,7 +63,7 @@ You are underage.
 
 โครงสร้างคำสั่ง if…else จะดำเนินในบล็อคคำสั่ง else ถ้าหากเงื่อนไขในคำสั่ง if นั้นเป็นเท็จ โดยมีรูปแบบการเขียนดังนี้
 
-\begin{codelist}{}{}
+\begin{codelist}{รูปแบบของการใช้งานคำสั่ง if-else}{}
 if expression:
     # statements
 else:
@@ -71,7 +71,7 @@ else:
 \end{codelist}
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่างการใช้ if...else}{}
 x = 15
 y = 6
 if x > y: print('x is greater than y.')
@@ -79,7 +79,7 @@ else: print('x is less than or equal to y.')
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result ตัวอย่างการใช้ if...else}{}
 x is greater than y.
 \end{codelist}
 
@@ -89,7 +89,7 @@ x is greater than y.
 การใช้ Chained Expressions คือ การใส่ elif ไปเรื่อยๆ และเงื่อนไขสุดท้ายจะต้องใช้ else โดยไม่ต้องการระบุ Boolean Expressions ใดๆ อีกแล้วหลังจากที่ใส่ else
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่างการเขียน Chained Expressions}{}
 x = 6
 y = 6
 if x > y: print('x is greater than y.')
@@ -98,17 +98,17 @@ else: print('x and y are equal.')
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result ตัวอย่างการเขียน Chained Expressions}{}
 x and y are equal.
 \end{codelist}
 
 
 \section{Nested Expressions}
 
-if มี Statement อยู่ข้างในได้ และ else ก็มี Statement อยู่ข้างในได้เช่นกัน เรียกว่า Nested Expressions
+if มี Statement อยู่ข้างในได้ และ el se ก็มี Statement อยู่ข้างในได้เช่นกัน เรียกว่า Nested Expressions
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่างการเขียน Nested Expressions}{}
 x = 7
 y = 6
 if x == y: print('x and y are equal.')
@@ -118,7 +118,7 @@ else:
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result  ตัวอย่างการเขียน Nested Expressions}{}
 x is greater than y.
 \end{codelist}
 
@@ -139,7 +139,7 @@ x is greater than y.
 \item จงเขียน code ต่อไปนี้
 \begin{itemize}
 \item รับค่า a, b เป็นจำนวนเต็ม
-\item แสดงผลว่า a>b หรือ a<b หรือ a=b
+\item แสดงผลว่า a > b หรือ a < b หรือ a = b
 \end{itemize}
 \item จงเขียน code ต่อไปนี้
 \begin{itemize}
