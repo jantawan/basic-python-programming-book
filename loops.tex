@@ -7,18 +7,18 @@
 
 คำสั่ง  \pyinline{for} statement เป็นการทำงานซ้ำๆ ตามจำนวนครั้งที่ระบุไว้ เช่น การใช้  \pyinline{for} statement ร่วมกัน  \pyinline{range()} โดยมีรูปแบบการเขียนดังนี้
 
-\begin{codelist}{}{}
+\begin{codelist}{รูปแบบการเขียน for statement}{}
 for var in sequence:
     # statements
 \end{codelist}
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่างการใช้ for statement}{}
 for x in range(0,5): print(x)
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result ตัวอย่างการใช้ for statement}{}
 >>>
 0
 1
@@ -32,13 +32,13 @@ Result:
 
  \pyinline{while} Statement เป็นคำสั่งให้โปรแกรมทำงานวนซ้ำในขณะที่เงื่อนไขของการวนซ้ำนั้นยังคงเป็นจริงอยู่ และเมื่อเงื่อนไขเป็นเท็จจะสิ้นสุดการทำงานวนซ้ำนั้นทันที ดังนั้นจึงต้องมีตัวควบคุมในการเพิ่มค่าไปเรื่อยๆ จนเงื่อนไขเป็นเท็จ มีลักษณะการเขียนดังนี้
 
-\begin{codelist}{}{}
+\begin{codelist}{รูปแบบการเขียน while statement}{}
 while expression:
     # satements
 \end{codelist}
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่างการใช้ while statement}{}
 x = 0
 while x < 10:
     print(x)
@@ -46,7 +46,7 @@ while x < 10:
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result ตัวอย่างการใช้ while statement}{}
 0
 1
 2
@@ -64,7 +64,7 @@ Result:
 คำสั่ง  \pyinline{break} เพื่อให้หลุดการทำงานในลูป
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่างการใช้ break}{}
 x = 0
 while True:
     print(x)
@@ -73,7 +73,7 @@ while True:
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result ตัวอย่างการใช้ break}{}
 0
 1
 2
@@ -93,7 +93,7 @@ Result:
 Recursion คือการเรียกใช้ฟังก์ชันซ้อนฟังก์ชันนั้นๆ เอง หรือ ฟังก์ชันเรียกใช้ตัวมันเอง จากฟังก์ชัน  \pyinline{countdown()} ในตัวอย่าง เมื่อมีการเรียกฟังก์ชัน  \pyinline{countdown(5)} โปรแกรมจะทำงานลดหลั่นลงไปเรื่อยๆ คือตั้งแต่ 5, 4, 3, 2, 1 ตราบเท่าที่ n ยังมากกว่า 0 แต่เมื่อเงื่อนไขเป็นเท็จแล้ว โปรแกรมจะแสดงคำว่า Go! แทน
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code  การใช้ Recursion}{}
 def countdown(n):
     if x > 0:
         print(n)
@@ -102,7 +102,7 @@ def countdown(n):
         print('Go.')
 \end{codelist}
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result  การใช้ Recursion}{}
 >>> countdown(5)
 5
 4

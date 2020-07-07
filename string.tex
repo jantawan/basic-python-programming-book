@@ -7,7 +7,7 @@ String คือ ข้อความหรือตัวอักษรที
 
 มีฟังก์ชันสำหรับ String อยู่หลายฟังก์ชัน เช่น ฟังก์ชัน \pyinline{len()} มีวัตถุประสงค์เพื่อหาความยาวของ String นั้น และสำหรับการระบุตำแหน่งของตัวอักษรแต่ละตัวใน String จะใช้สัญลักษณ์ก้ามปู \pyinline{[ ]} โดยตัวชี้หรือ Index จะเริ่มต้นจาก 0 เช่น \pyinline{fruit[0]}
 
-\begin{codelist}{}{}
+\begin{codelist}{การใช้ฟังก์ชัน len() และการใช้สัญลักษณ์ก้ามปู [ ]}{}
 >>> fruit = 'banana'
 >>> fruit
 'banana'
@@ -29,7 +29,7 @@ String คือ ข้อความหรือตัวอักษรที
 การเดินทางไปเรื่อยๆ ตามตัวชี้ของ String โดยในตัวอย่างแรกจะเป็นการใช้ while ส่วนในตัวอย่างถัดมาจะใช้ตัวแปร string เป็น Iterator ซึ่งผลลัพธ์จะออกมาเหมือนกัน
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่างการเดินทางตามตัวชี้ของ String}{}
 fruit = 'banana'
 i = 0
 while i < len(fruit):
@@ -39,7 +39,7 @@ for character in fruit: print(character)
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result ตัวอย่างการเดินทางตามตัวชี้ของ String}{}
 >>>
 b
 a
@@ -62,7 +62,7 @@ a
 
 การตัดคำใน String ด้วยตัวชี้ (Index) โดยการตัดคำเป็นส่วนย่อยๆ จะมีรูปแบบการเขียนเป็น [start:end] โดยที่ start เป็นตำแหน่งของ Index เริ่มต้นที่ต้องการ และ end นั้นเป็นตำแหน่งก่อนหน้าตำแหน่งสุดท้ายของตัวอักษรที่ต้องการ
 
-\begin{codelist}{}{}
+\begin{codelist}{การทำ String slices}{}
 >>> s = 'Monty Python'
 >>> s
 'Monty Python'
@@ -80,7 +80,7 @@ a
 
 หากเขียนเป็น  \pyinline{[start:]} ระบุจุดเริ่มต้นที่ start ผลลัพธ์จะแสดงยาวไปจนถึงจุดสิ้นสุด และหากเขียนเป็น  \pyinline{[:end]} ผลลัพธ์ที่ได้จะแสดงอักษรตั้งแต่ตัวแรกหรือตัวชี้ที่ศูนย์ไปจนถึงตัวสิ้นสุดที่ระบุไว้
 
-\begin{codelist}{}{}
+\begin{codelist}{การเชียน String slices แบบไม่ระบุต้นหรือปลาย}{}
 >>> s[1:]
 'onty Python'
 >>> s[:5]
@@ -93,7 +93,7 @@ a
 
 String เป็นโครงสร้างข้อมูลที่เปลี่ยนแปลงไม่ได้ ดังนั้นถ้าหากต้องการสร้าง String ใหม่ก็ต้องสร้างเป็น Object ใหม่เท่านั้น
 
-\begin{codelist}{}{}
+\begin{codelist}{การสร้าง String ใหม่}{}
 >>> s
 'Monty Python'
 >>> s[0] = 'J'
@@ -126,7 +126,7 @@ TypeError: 'str' object does not support item assignment
 \end{itemize}
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่างการสร้างโปรแกรมเพื่อค้นหาตัวอักษรใน String}{}
 def find(str, char):
     i = 0
     while i < len(str):
@@ -136,7 +136,7 @@ def find(str, char):
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result การสร้างโปรแกรมเพื่อค้นหาตัวอักษรใน String}{}
 >>> find('Mike', 'c')
 -1
 >>> find('Mike', 'e')
@@ -150,7 +150,7 @@ Result:
 
 การดำเนินการกับ String สามารถศึกษาฟังก์ชันได้ที่ \url{https://docs.python.org/2.4/lib/string-methods.html} เช่น  \pyinline{str.upper()} ใช้ทำงานเพื่อแปลงตัวอักษรภาษาอังกฤษเป็นตัวพิมพ์ใหญ่
 
-\begin{codelist}{}{}
+\begin{codelist}{การใช้ String methods}{}
 >>> s = 'Monty Python'
 >>> s
 'Monty Python'
@@ -168,7 +168,7 @@ Result:
 
 ใช้ในการพิสูจน์ค่าแบบ Boolean Expression เช่น ‘t’ in s แปลว่า ตัวอักษรตัว t อยู่ใน String ชื่อว่า s หรือไม่ หรือในทางตรงข้ามเพื่อการตรวจสอบว่าไม่มีหรือไม่ให้ใส่ not in 
 
-\begin{codelist}{}{}
+\begin{codelist}{การใช้ in operator}{}
 >>> 't' in s
 True
 \end{codelist}
@@ -177,7 +177,7 @@ True
 
 การเปรียบเทียบ String สามารถใช้สัญลักษณ์  ( > , < , <= , <= , == , !=  ) เพื่อเปรียบเทียบค่าของ String สองชุด โดยดูผลลัพธ์ของการเปรียบเทียบค่าของ ASCII value นั้นๆ
 
-\begin{codelist}{}{}
+\begin{codelist}{การเปรียบเทียบ String สองชุด}{}
 >>> 'banana' == 'banana'
 True
 >>> 'banana' !=  'banana'
@@ -197,27 +197,25 @@ False
 
 การเปลี่ยนการจัดวางรูปแบบของ String มีสองวิธีคือ แบบ Classic ซึ่งทำได้โดยใส่สัญลักษณ์ + แต่สัญลักษณ์นี้จะมีข้อจำกัดคือไม่สามารถแทรกข้อความระหว่างกันได้ แต่หากใช้สัญลักษณ์ \texttt{\%} จะช่วยแก้ไขข้อจำกัดนี้ได้ เช่น \texttt{\%s} สำหรับ string และ \texttt{\%d} สำหรับตัวเลข 
 
-\begin{codelist}{}{}
-%>>> 'Hello' + 'Mike'
-%'HelloMike'
-%>>> 'Hello \%s' \%'Mike'
-%'Hello Mike'
-%>>> 'Hello `\%s\exclaim\exclaim' \%'Mike'
-%'Hello Mike!!'
-%>>>
+\begin{codelist}{การเปลี่ยนการจัดวางของ String โดยใช้ \%s}{}
+>>> 'Hello' + 'Mike'
+'HelloMike'
+>>> 'Hello \%s' \%'Mike'
+'Hello Mike'
+>>>
 \end{codelist}
 
-\begin{codelist}{}{}
-%>>> 'Total is \%d baht' \% 12
-%'Total is 12 baht'
-%>>>
+\begin{codelist}{การเปลี่ยนการจัดวางของ String โดยใช้ \%d}{}
+>>> 'Total is \%d baht' \% 12
+'Total is 12 baht'
+>>>
 \end{codelist}
 
 
 
 ส่วนการเปลี่ยนการจัดวางของ String แบบ Modern คือ ใช้ .format และระบุ Parameters ได้มากกว่า 1 ตัว อีกทั้งยังสามารถจัดเรียงลำดับ Parameters สลับก่อนหลังได้ตามสะดวก สามารถศึกษาเพิ่มเติมได้ที่ \url{https://docs.python.org/3/library/string.html\#format-examples}
 
-\begin{codelist}{}{}
+\begin{codelist}{การจัดวาง String โดยใช้ .format()}{}
 >>> x = 12
 >>> 'Total is {0} baht' .format(x)
 'Total is 12 baht'
