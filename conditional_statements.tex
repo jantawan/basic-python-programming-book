@@ -4,6 +4,23 @@
 
 Boolean Expressions คือ การดำเนินการเปรียบเทียบค่าเพื่อให้ได้ผลลัพธ์ออกมาเป็นถูก (True) หากเงื่อนไขเป็นจริง หรือผิด (False) หากเงื่อนไขเป็นเท็จ เช่น ค่าของ x มากกว่าค่าของ y ใช่หรือไม่ ซึ่งผลลัพธ์จะออกมาเป็นถูกหรือผิด
 
+
+\begin{table}
+\caption{สัญลักษณ์การคำนวณทางคณิตศาสตร์แบบย่อ}
+\centering
+\begin{tabu}{l l}
+ \hline
+ สัญลักษณ์ & ความหมาย  \\ [0.5ex] 
+ \hline
+x==y	& x เท่ากับ y \\
+x != y	& x ไม่เท่ากับ y \\
+x > y	& x มากกว่า y \\
+x < y	& x น้อยกว่า y \\
+x >= y & x มากกว่าหรือเท่ากับ y \\
+x <= y & x น้อยกว่าหรือเท่ากับ y \\
+\end{tabu}
+\end{table}
+
 \begin{codelist}{การใช้สัญลักษณ์เปรียบเทียบค่า}{}
 >>> a = 5
 >>> b = 6
@@ -31,6 +48,45 @@ False
 False
 \end{codelist}
 
+\begin{table}
+\caption{ตารางผลการใช้ and}
+\centering
+\begin{tabu}{l l l}
+ \hline
+Boolean Expression 1 (BE1) & Boolean Expression 1 (BE2) & BE1 and BE2  \\ [0.5ex] 
+ \hline
+False & False & False \\
+False & True & False  \\
+True & False & False \\
+\textbf{True} & \textbf{True} & \textbf{True} \\
+\end{tabu}
+\end{table}
+
+\begin{table}
+\caption{ตารางผลการใช้ or}
+\centering
+\begin{tabu}{l l l}
+ \hline
+Boolean Expression 1 (BE1) & Boolean Expression 1 (BE2) & BE1 or BE2  \\ [0.5ex] 
+ \hline
+\textbf{False} & \textbf{False} & \textbf{False} \\
+False & True & True  \\
+True & False & True \\
+True & True & True \\
+\end{tabu}
+\end{table}
+
+\begin{table}
+\caption{ตารางผลการใช้ not}
+\centering
+\begin{tabu}{l l}
+ \hline
+ Boolean Expression & Not BE1  \\ [0.5ex] 
+ \hline
+False	& True \\
+True	& False \\
+\end{tabu}
+\end{table}
 
 \section{การใช้คำสั่ง if เพื่อเลือกเงื่อนไข}
 

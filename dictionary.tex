@@ -3,7 +3,7 @@
 
 ดิกชันนารี (Dictionary) คือประเภทข้อมูลที่เก็บข้อมูลในเป็นคู่ๆ ของ Key และ Value โดยที่ Key ใช้สำหรับเป็น Index ในการเข้าถึงข้อมูล Value ของ Key นั้นๆ การสร้าง Dictionary เปล่าจะเขียนอยู่ภายในวงเล็บปีกกา { } หรือ dict() ส่วนการใส่ค่าใน Dictionary จะเขียนอยู่ในวงเล็บปีกกา แต่ละคู่จะขึ้นต้น key ตามด้วย : แล้วตามด้วย value และคั่นคู่ด้วยเครื่องหมาย comma (,) 
 
-\begin{codelist}{}{}
+\begin{codelist}{การสร้าง Dictionary}{}
 >>> stocks = {'scb':160, 'ptt':360}
 >>> stocks
 {'scb':160, 'ptt':360}
@@ -15,14 +15,14 @@
 การอ่านค่าใน Dictionary ด้วยคำสั่ง for หรือการใช้ Dictionary เป็น Iterators เมื่อมีการประกาศค่าของ Dictionary แล้ว for จะวนอ่านค่าใน Dictionary ทีละตัว เช่น \pyinline{for key in stocks: print(key, stocks[key])}
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่างการใช้ Dictionary เป็น Iterator}{}
 stocks = {'scb':160, 'ptt':360}
 for key in stocks:
     print('{0} = {1}' .format(key, stocks[key]))
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result จากตัวอย่างการใช้ Dictionary เป็น Iterator}{}
 ptt = 360
 scb = 160
 \end{codelist}
@@ -32,7 +32,7 @@ scb = 160
 การหาค่าของคีย์ในดิกชันนารีเมื่อรู้ value เช่น สร้างฟังก์ชัน \pyinline{reverse_lookup()} มีการส่ง Parameters สองตัวคือ Dictionary กับ Value สำหรับ Key แต่ละตัวใน Dictionary นี้ ถ้า ค่าของ Dictionary เท่ากับ Value ที่ต้องการ ให้ส่งค่า Key กลับมา แต่ถ้าไม่มีก็จะไม่ต้องส่งอะไรออกมา
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่างการสร้างฟังก์ชัน Reverse lookup สำหรับ Dictionary}{}
 def reverse_lookup(d,v):
     for key in d:
         if d[key] == v: return key
@@ -40,7 +40,7 @@ def reverse_lookup(d,v):
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result จากตัวอย่างการสร้างฟังก์ชัน Reverse lookup สำหรับ Dictionary}{}
 >>> reverse_lookup(stocks, 160)
 'scb'
 \end{codelist}
@@ -50,7 +50,7 @@ Result:
 
 keys() method จะแสดง keys ออกมา ส่วน values() method จะแสดง values ออกมา 
 
-\begin{codelist}{}{}
+\begin{codelist}{keys() และ values() methods}{}
 >>> stocks.keys()
 dict_keys(['ppt','scb'])
 >>> stocks.values()
@@ -65,13 +65,13 @@ dict_values([360,160])
 เมื่อไรก็ตามที่ต้องการสร้างฟังก์ชันที่รับ Parameters ได้ไม่จำกัดจำนวนและบอก Keywords ได้ด้วย ให้ใส่เครื่องหมายดอกจัน (*) สองครั้งไว้หน้า Parameters หมายความว่าสิ่งที่ผ่านเข้ามาทาง Parameters จะเป็น Dictionary 
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่าง Keyword argument dictionary}{}
 def printall(**kwargs):
     for key in kwargs:
         print(key + ' ' + str(kwargs[key]))
 \end{codelist}
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result จากตัวอย่างKeyword argument dictionary}{}
 >>> printall(x=1, y=2, z=3)
 y 2
 z 3
@@ -81,13 +81,13 @@ x 1
 แต่หากต้องการให้ Arguments หรือ Parameters ที่รับเข้ามาเป็น list ให้ใส่เครื่องหมายดอกจัน (*) หนึ่งครั้งไว้หน้า Parameters 
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่าง List argument}{}
 def printall(*args):
     for x in args:
         print(x)
 \end{codelist}
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result จาก ตัวอย่าง List argument}{}
 >>> printall(1,2,3,4,5)
 1
 2
@@ -99,18 +99,18 @@ Result:
 \section{แบบฝึกหัด}
 
 \begin{enumerate} 
-\item ให้ dictionary มีค่าคือ {0: 10, 1: 20} เขียนโปรแกรมให้เพิ่มค่าอีกคู่เข้าไป คือ 2:30
-\item ทำการรวมค่าทั้งหมดใน dictionary นี้ {'cats':100,'dogs':60,'pigs':300}
+\item ให้ dictionary มีค่าคือ \pyinline{{0: 10, 1: 20}} เขียนโปรแกรมให้เพิ่มค่าอีกคู่เข้าไป คือ \pyinline{2:30}
+\item ทำการรวมค่าทั้งหมดใน dictionary นี้ (\pyinline{'cats':100,'dogs':60,'pigs':300})
 \item ทำการเชื่อมต่อ dictionary ทั้ง 3 ชุดนี้ให้เป็นชุดเดียว
 	\begin{itemize}
-		\item dic1={1:10, 2:20} dic2={3:30, 4:40} dic3={5:50,6:60} 
+		\item \pyinline{dic1={1:10, 2:20} dic2={3:30, 4:40} dic3={5:50,6:60} }
 	\end{itemize}
 \item จงดำเนินการต่อไปนี้
 	\begin{itemize}
-		\item สร้าง dictionary ชื่อ stock มีค่าคือ "banana": 40, "apple": 10, "orange": 15, "pear": 33
-		\item สร้าง dictionary ชื่อ prices มีค่าคือ "banana": 4, "apple": 2, "orange": 1.5, "pear": 3
+		\item สร้าง dictionary ชื่อ stock มีค่าคือ \pyinline{'banana': 40, 'apple': 10, 'orange': 15, 'pear': 33}
+		\item สร้าง dictionary ชื่อ prices มีค่าคือ \pyinline{'banana': 4, 'apple': 2, 'orange: 1.5, 'pear': 3}
 		\item ให้คำนวณว่าถ้าขายผลไม้ได้ทั้งหมดจะได้เงินเท่าไร
 	\end{itemize}
-\item เขียนฟังก์ชันตรวจสอบว่ามีค่าตัวเลขที่รับมาให้ key ของ dictionary หรือไม่ โดยให้ d คือ dictionary มีค่าคือ {1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}
+\item เขียนฟังก์ชันตรวจสอบว่ามีค่าตัวเลขที่รับมาให้ key ของ dictionary หรือไม่ โดยให้ d คือ dictionary มีค่าคือ \pyinline{{1: 10, 2: 20, 3: 30, 4: 40, 5: 50, 6: 60}}
 
 \end{enumerate}

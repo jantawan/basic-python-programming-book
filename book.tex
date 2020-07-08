@@ -34,7 +34,9 @@
 \usepackage[most]{tcolorbox}
 \tcbuselibrary{minted}
 \usepackage{float}
+\usepackage{graphicx}
 
+\graphicspath{{./images/}}
 \setlist[itemize]{noitemsep,nolistsep,topsep=0pt}
 
 \titleformat{\chapter}[display]
@@ -89,19 +91,19 @@
 \listoftables
 
 \mainmatter
-\include{lesson_plan}
-\include{introduction}
-\include{python_elements}
-\include{conditional_statements}
-\include{functions}
-\include{loops}
-\include{string}
-\include{list}
-\include{dictionary}
-\include{tuple}
-\include{file}
-\include{oop}
 
+\include{lesson_plan}
+%\include{introduction}
+%\include{python_elements}
+%\include{conditional_statements}
+%\include{functions}
+%\include{loops}
+%\include{string}
+%\include{list}
+%\include{dictionary}
+%\include{tuple}
+%\include{file}
+%\include{oop}
 
 \renewcommand{\refname}{บรรณานุกรม}
 \bibliography{book}

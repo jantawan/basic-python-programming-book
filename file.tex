@@ -1,4 +1,4 @@
-\chapter{บทที่ 10	การจัดการไฟล์ (Files)}
+\chapter{การจัดการไฟล์ (Files)}
 \section{ความหมายของไฟล์}
 
 ไฟล์คือพื้นที่เก็บข้อมูลบนคอมพิวเตอร์ ไฟล์มีหลายประเภทตามการใช้งาน เช่น ไฟล์ Microsoft Word ไฟล์เพลง และไฟล์ VDO เป็นต้น โดยทั่วไปไฟล์มี 2 ประเภท คือ Text files และ Binary files โดย Text files เป็นไฟล์ที่เก็บชุดข้อความซึ่งเปิดอ่านได้ ส่วน Binary files จะอยู่ในรูปแบบของ Binary form เพื่อให้คอมพิวเตอร์ทำงาน
@@ -9,11 +9,11 @@
 
 การเรียกใช้โมดูล os ต้องใช้คำสั่ง import os ก่อนแล้วจะสามารถใช้คำนั่งในโมดูลได้ เช่น os.getcwd() ใช้แสดง Directory ที่กำลังทำงานอยู่ ส่วนคำนั่ง os.chdir() คือการเปลี่ยนตำแหน่งการทำงานของ Directory
 
-\begin{codelist}{}{}
-%>>> import os
-%>>> os.getcwd()
-%\rq{'c:\\Users\\\\janta\\\\AppData\\\\Local\\\\Programs\\\\Python\\\\Python37-32'}		
-%>>> os.chdir('c:\\\\Users\\\\janta\\\\Desktop')
+\begin{codelist}{ฟังก์ชัน os.getcwd() และ os.chdir()}{}
+>>> import os
+>>> os.getcwd()
+|\rq{}c:\textbackslash{}Users\textbackslash{}janta\textbackslash{}AppData\textbackslash{}Local\textbackslash{}Programs\textbackslash{}Python\textbackslash{}Python37-32\rq{}|
+>>> os.chdir('c:\Users\janta\Desktop')
 \end{codelist}
 
 คำสั่งอื่นๆ เช่น 
@@ -26,7 +26,7 @@
 \item 	\pyinline{os.listdir(os.getcwd())}
 \end{itemize}
 
-\begin{codelist}{}{}
+\begin{codelist}{ตัวอย่างผลของคำสั่งในโมดูล os}{}
 >>> os.path.isdir(os.getcwd())
 True
 >>> os.listdir(os.getcwd())
@@ -39,15 +39,14 @@ True
 
 ฟังก์ชัน\pyinline{open()} มีไว้เพื่อเปิดไฟล์ ก่อนที่จะเริ่มทำงานกับไฟล์ทุกครั้งจะต้องทำการเปิดไฟล์ก่อน โดยมีรูปแบบการเขียนคือ \pyinline{fout = open(filename, flag)} ซึ่ง Filename คือ ชื่อไฟล์ที่ต้องการเปิด ส่วน Flag คือ รูปแบบในการเปิดไฟล์ ซึ่งมีหลายแบบ เช่น r ใช้อ่านข้อมูลอย่างเดียว w ใข้เขียนข้อมูลลงในไฟล์ใหม่ที่ไม่ได้สร้างไว้ก่อนหน้า a ใช้เขียนต่อท้ายไฟล์เดิม เป็นต้น และทุกครั้งหลังใช้งานไฟล์เสร็จแล้ว จะต้องทำการปิดไฟล์ด้วยคำสั่ง \pyinline{close()}
 
-\begin{codelist}{}{}
-%import os
-%os.chdir('c:\textbackslash\textbackslash Users\\janta\\Desktop')
-%fout = open('file.txt', 'w')
-%fout.write('The first line. \textbackslash n')
-%fout.write('The second line. \textbackslash n')
-%fout.write('The thrid line. \textbackslash n')
-%fout.close()
-
+\begin{codelist}{การสร้างไฟล์}{}
+import os
+os.chdir('c:\textbackslash\Users\janta\Desktop')
+fout = open('file.txt', 'w')
+fout.write('The first line. \n')
+fout.write('The second line. \n')
+fout.write('The thrid line. \n')
+fout.close()
 \end{codelist}
 
 
@@ -60,7 +59,7 @@ True
 การเขียนโปรแกรมเพื่อให้สามารถจัดการเหตุการณ์ที่คาดไม่ถึงได้ อาทิ เปิดไฟล์ไม่ได้เพราะ Hard disk มีปัญหา หรือ Network มีปัญหา สามารถเขียนโปรแกรมให้แสดง Error message ออกมาได้ โดยใช้ Try and Except statements สำหรับ \pyinline{FileNotFoundError} เช่น ในการเปิดไฟล์ที่ยังไม่ได้สร้างไฟล์ไว้ก่อนหน้า แล้วต้องการให้ Error message แสดงออกมาว่า  File not found!
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่าง FileNotFoundError}{}
 try:
     fin = open('abcdef.txt')
 except FileNotFoundError:
@@ -68,7 +67,7 @@ except FileNotFoundError:
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result ตัวอย่าง FileNotFoundError}{}
 >>>
 File not found.
 >>>
@@ -77,7 +76,7 @@ File not found.
 นอกจากนี้ยังมี finally statement จะทำงานท้ายสุดไม่ว่าจะประสบความสำเร็จหรือไม่ก็ตาม อ่านเพิ่มเติมเรื่อง eexception handling ได้ที่ \url{https://docs.python.org/3/library/exceptions.html\#bltin-exceptions}
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่าง Finally statement}{}
 try:
     fin = open('file.txt')
 except:
@@ -87,14 +86,14 @@ finally:
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result ตัวอย่าง Finally statement}{}
 >>>
 Finally...everything is ok.
 >>>
 \end{codelist}
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่าง Raise exception}{}
 def print_james(name):
     if name == 'James':
         print('Hello James.')
@@ -105,14 +104,13 @@ print_james('Jake')
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
-%Traceback (most recent call last):
- % File "C:\Users\janta\OneDrive\Documents\Python 1_63\01_Overview\code01.py", line 30, in <module>
-  %  print_james('Jake')
- % File "C:\Users\janta\OneDrive\Documents\Python 1_63\01_Overview\code01.py", line 28, in print_james
-  %  raise Exception('Name is not James.')
-%Exception: Name is not James.
-
+\begin{codelist}{Result ตัวอย่าง Raise exception}{}
+Traceback (most recent call last):
+  File "C:\Users\janta\OneDrive\Documents\Python 1_63\01_Overview\code01.py", line 30, in <module>
+    print_james('Jake')
+  File "C:\Users\janta\OneDrive\Documents\Python 1_63\01_Overview\code01.py", line 28, in print_james
+    raise Exception('Name is not James.')
+Exception: Name is not James.
 \end{codelist}
 
 
@@ -122,7 +120,7 @@ Result:
 Databases คือ ไฟล์แบบ Binary ที่เก็บข้อมูลในเครื่องคอมพิวเตอร์ที่เก็บในลักษณะ Key และ Value เหมือน Dictionary โดยจะต้องมีการ import โมดูล dbm ก่อนซึ่งเป็นการจัดการเกี่ยวกับ Database และผลลัพธ์ที่ได้จากการอ่านไฟล์ Database จะมีการแสดงตัวอักษร b ไว้ด้านหน้าเพื่อแสดงความเป็น Binary
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่าง Key/Value Databases}{}
 import dbm
 db = dbm.open('stocks.db', 'c')
 db['ptt']='360'
@@ -133,7 +131,7 @@ db.close()
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result ตัวอย่าง Key/Value Databases}{}
 >>>
 b'360'
 b'160'
@@ -145,7 +143,7 @@ b'160'
 
 เริ่มต้นด้วยการ import pickle เช่น ให้ list ชื่อว่า t1 แล้วทำการ dumps(t1) ให้กลายเป็น string ตอนนี้ก็จะสามารถเอา string ไปเก็บในไฟล์ข้อมูลหรือเก็บใน key-value database ก็ได้ และเมื่อต้องการเรียกนำกลับมาใช้ในสภาพเดิมให้ใช้คำสั่ง loads(s) 
 
-\begin{codelist}{}{}
+\begin{codelist}{การ Pickling}{}
 >>> import pickle
 >>> t = [1,2,3,4,5,6,7]
 >>> t
@@ -155,7 +153,7 @@ b'160'
 [1,2,3,4,5,6,7]
 >>> s = pickle.dumps(t1)
 >>> s
-% b'\x80\x04\x95\x13\x00\x00\x00\x00\x00\x00\x00]\x94(K\x01K\x02K\x03K\x04K\x05K\x06K\x07e.'
+ b'\x80\x04\x95\x13\x00\x00\x00\x00\x00\x00\x00]\x94(K\x01K\x02K\x03K\x04K\x05K\x06K\x07e.'
 >>> t2 = pickle.loads(s)
 >>> t2
 [1, 2, 3, 4, 5, 6, 7]
@@ -172,7 +170,7 @@ b'160'
 การให้ Python เรียกใช้โปรแกรมอื่นได้ (Piping) โดยใช้โมดูล os และใช้ฟังก์ชัน popen()  อาทิ ตั้งตัวแปรชื่อ cmd เรียกใช้คำสั่ง dir ของ Windows OS ด้วยคำสั่ง popen แล้วนำผลจากคำสั่งนั้นมาเก็บเป็น String ไว้ในตัวแปรชื่อ result 
 
 Source code:
-\begin{codelist}{}{}
+\begin{codelist}{Source code ตัวอย่างการให้ Python เรียกใช้โปรแกรมอื่นได้}{}
 import os
 os.chdir('c:\\users\\janta\\Desktop')
 cmd = 'dir'
@@ -184,7 +182,7 @@ print(result)
 \end{codelist}
 
 Result:
-\begin{codelist}{}{}
+\begin{codelist}{Result ตัวอย่างการให้ Python เรียกใช้โปรแกรมอื่นได้}{}
 Volume in drive C has no label.
 Volume Serial Number is 2E09-DC35
 Directory of c:\users\janta\Desktop
