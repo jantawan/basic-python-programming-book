@@ -58,7 +58,7 @@
 
 \usepackage{minted}
 \setminted{fontsize=\small,baselinestretch=1,startinline=true}
-\newminted{py}{python3,linenos=true,frame=lines,framesep=10pt,escapeinside=||}
+\newminted{py}{python3,linenos=true,escapeinside=||}
 
 \renewcommand{\baselinestretch}{1.5}
 \renewcommand{\contentsname}{สารบัญ}
@@ -74,7 +74,7 @@
   \begin{figure}[H]
   \caption{#2}\label{#3}
   \begin{minted}[
-    linenos,frame=single,framesep=10pt,escapeinside=||]{python3}}
+    linenos,frame=single,framesep=2pt,escapeinside=||]{python3}}
  {\end{minted}\end{figure}}
 
 \begin{document}

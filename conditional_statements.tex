@@ -2,17 +2,17 @@
 
 \section{การเปรียบเทียบค่า (Boolean Expressions)}
 
-Boolean Expressions คือ การดำเนินการเปรียบเทียบค่าเพื่อให้ได้ผลลัพธ์ออกมาเป็นถูก (True) หากเงื่อนไขเป็นจริง หรือผิด (False) หากเงื่อนไขเป็นเท็จ เช่น ค่าของ x มากกว่าค่าของ y ใช่หรือไม่ ซึ่งผลลัพธ์จะออกมาเป็นถูกหรือผิด
+Boolean Expressions คือ การดำเนินการเปรียบเทียบค่าเพื่อให้ได้ผลลัพธ์ออกมาเป็นถูก (True) หากเงื่อนไขเป็นจริง หรือผิด (False) หากเงื่อนไขเป็นเท็จหรือไม่เป็นจริง การเปรียบเทียบค่าใช้กับคำสั่งตรวจสอบเงื่อนไขการตัดสินใจ \texttt{if} และคำสั่งการทำงานวนซ้ำทั้ง \texttt{for} และ \texttt{while} เช่น ค่าของ x มากกว่าค่าของ y ใช่หรือไม่ ซึ่งผลลัพธ์จะออกมาเป็น True หรือ False
 
 
-\begin{table}
-\caption{สัญลักษณ์การคำนวณทางคณิตศาสตร์แบบย่อ}
+\begin{table}[h!]
+\caption{ตัวดำเนินการเปรียบเทียบในภาษา Python}
 \centering
 \begin{tabu}{l l}
  \hline
  สัญลักษณ์ & ความหมาย  \\ [0.5ex] 
  \hline
-x==y	& x เท่ากับ y \\
+x == y	& x เท่ากับ y \\
 x != y	& x ไม่เท่ากับ y \\
 x > y	& x มากกว่า y \\
 x < y	& x น้อยกว่า y \\
@@ -21,7 +21,7 @@ x <= y & x น้อยกว่าหรือเท่ากับ y \\
 \end{tabu}
 \end{table}
 
-\begin{codelist}{การใช้สัญลักษณ์เปรียบเทียบค่า}{}
+\begin{codelist}{ตัวอย่างการใช้สัญลักษณ์เปรียบเทียบค่า}{}
 >>> a = 5
 >>> b = 6
 >>> a == b
@@ -32,21 +32,25 @@ False
 True
 >>> 5 >= 6
 False
+>>> print('5 == 5 :', 5 == 5)
+5 == 5 : True
+>>> print('12 >= 13.47 : ', 12 >= 13.47)
+12 >= 13.47 : False
+>>> 
 \end{codelist}
-
 
 \section{ตัวดำเนินการทางตรรกศาสตร์ (Logical Operators)}
 
-การเปรียบเทียบค่ามากกว่าหนึ่งครั้งเชื่อมต่อกันสามารถดำเนินการได้โดยใช้ตัวดำเนินการทาง ตรรกศาสตร์ (Logical Operators) ซึ่งได้แก่ และ (and) หรือ (or) ไม่ (not) เช่น a > 2 or c > b and c >2
+การเปรียบเทียบค่ามากกว่าหนึ่งครั้งเชื่อมต่อกันสามารถดำเนินการได้โดยใช้ตัวดำเนินการทางตรรกศาสตร์ (Logical Operators) ในภาษา Python นั้นมีตัวดำเนินการทางตรรกศาสตร์ 3 ชนิด ซึ่งได้แก่ และ \texttt{and} หรือ \texttt{or} ไม่ \texttt{not} เช่น \texttt{a > 2 or c > b and c >2} 
 
-ตัวอย่างการใช้ตัวดำเนินการทางตรรกศาสตร์ในภาษา Python
-
-\begin{codelist}{ตัวอย่างการใช้ and or not}{}
+\begin{codelist}{ตัวอย่างการใช้ตัวดำเนินการทางตรรกศาสตร์ในภาษา Pythont}{}
 >>> a = -4
 >>> b = -2
 >>> a > 2 or c > b and c> 2
 False
 \end{codelist}
+
+ตัวดำเนินการทางตรรกศาสตร์  and ใช้เชื่อมสอง Expression ถ้าทั้งสอง Expression มีค่าเป็น True จะได้ผลลัพธ์เป็น True  ส่วนตัวดำเนินการทางตรรกศาสตร์ or ใช้เชื่อมสอง Expression ถ้าทั้งสอง Expression มีค่าเป็น False เท่านั้น ผลลัพธ์จึงจะเป็น False และตัวดำเนินการทางตรรกศาสตร์ not จะใช้ในการกลับค่าจาก True เป็น False และจาก False เป็น True
 
 \begin{table}
 \caption{ตารางผลการใช้ and}
@@ -83,8 +87,8 @@ True & True & True \\
  \hline
  Boolean Expression & Not BE1  \\ [0.5ex] 
  \hline
-False	& True \\
-True	& False \\
+False & True \\
+True & False \\
 \end{tabu}
 \end{table}
 
@@ -101,17 +105,17 @@ if expresion:
 
 ตัวอย่างเช่น ให้แสดงข้อความว่า อายุต่ำกว่าเกณฑ์ ถ้าหากค่าอายุที่รับเข้ามาต่ำกว่า 18 ปี
 
-Source code:
-\begin{codelist}{Source code จากโจทย์ตัวอย่าง}{}
+\begin{codelist}{ตัวอย่างการใช้ \texttt{if}}{}
 age = int(input('Enter your age: `))
 if age < 18:
    print('You are underage.')
 \end{codelist}
 
-Result:
-\begin{codelist}{Result จากโจทย์ตัวอย่าง}{}
+\begin{codelist}{ผลลัพธ์จากโจทย์ตัวอย่างการใช้ \texttt{if}}{}
+>>>
 Enter your age: 15
 You are underage.
+>>>
 \end{codelist}
 
 
@@ -126,17 +130,19 @@ else:
     # statements
 \end{codelist}
 
-Source code:
-\begin{codelist}{Source code ตัวอย่างการใช้ if...else}{}
+
+\begin{codelist}{ตัวอย่างการใช้ \texttt{if...else}}{}
 x = 15
 y = 6
 if x > y: print('x is greater than y.')
 else: print('x is less than or equal to y.')
 \end{codelist}
 
-Result:
-\begin{codelist}{Result ตัวอย่างการใช้ if...else}{}
+
+\begin{codelist}{ผลลัพธ์จากตัวอย่างการใช้ \texttt{if...else}}{}
+>>>
 x is greater than y.
+>>>
 \end{codelist}
 
 
@@ -144,8 +150,7 @@ x is greater than y.
 
 การใช้ Chained Expressions คือ การใส่ elif ไปเรื่อยๆ และเงื่อนไขสุดท้ายจะต้องใช้ else โดยไม่ต้องการระบุ Boolean Expressions ใดๆ อีกแล้วหลังจากที่ใส่ else
 
-Source code:
-\begin{codelist}{Source code ตัวอย่างการเขียน Chained Expressions}{}
+\begin{codelist}{ตัวอย่างการเขียน Chained Expressions}{}
 x = 6
 y = 6
 if x > y: print('x is greater than y.')
@@ -153,18 +158,19 @@ elif x < y: print('x is less than y.')
 else: print('x and y are equal.')
 \end{codelist}
 
-Result:
-\begin{codelist}{Result ตัวอย่างการเขียน Chained Expressions}{}
+
+\begin{codelist}{ผลลัพธ์ตัวอย่างการเขียน Chained Expressions}{}
+>>>
 x and y are equal.
+>>>
 \end{codelist}
 
 
 \section{Nested Expressions}
 
-if มี Statement อยู่ข้างในได้ และ el se ก็มี Statement อยู่ข้างในได้เช่นกัน เรียกว่า Nested Expressions
+if มี Statement อยู่ข้างในได้ และ else ก็มี Statement อยู่ข้างในได้เช่นกัน เรียกว่า Nested Expressions
 
-Source code:
-\begin{codelist}{Source code ตัวอย่างการเขียน Nested Expressions}{}
+\begin{codelist}{ตัวอย่างการเขียน Nested Expressions}{}
 x = 7
 y = 6
 if x == y: print('x and y are equal.')
@@ -173,9 +179,10 @@ else:
     else: print('x is greater than y.')
 \end{codelist}
 
-Result:
-\begin{codelist}{Result  ตัวอย่างการเขียน Nested Expressions}{}
+\begin{codelist}{ผลลัพธ์ตัวอย่างการเขียน Nested Expressions}{}
+>>>
 x is greater than y.
+>>>
 \end{codelist}
 
 \section{แบบฝึกหัด}
