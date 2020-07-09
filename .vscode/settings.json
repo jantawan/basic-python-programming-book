@@ -16,5 +16,6 @@
     "-file-line-error",
     "-shell-escape",
     "%DOC%"
-  ]
+  ],
+  "latex-workshop.latex.autoBuild.run": "never"
 }
