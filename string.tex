@@ -1,11 +1,11 @@
 \chapter{การใช้งาน String}
 \section{ความหมายของ String}
 
-String คือ ข้อความหรือตัวอักษรที่เรียงต่อๆ กันที่อยู่ในเครื่องหมายคำพูดแบบ Double Quotes เช่น “How are you?” หรือ Single Quotes เช่น ‘How are you?’ 
+String คือ ข้อความหรือตัวอักษรที่เรียงต่อๆ กันที่อยู่ในเครื่องหมายคำพูดแบบ Double Quotes หรือเครื่องหมายฟันหนู เช่น \texttt{''How are you?''} หรือ Single Quotes หรือเครื่องหมายฝนทอง เช่น \texttt{'How are you?’}
 
 \section{ฟังก์ชัน \texttt{len()}}
 
-มีฟังก์ชันสำหรับ String อยู่หลายฟังก์ชัน เช่น ฟังก์ชัน \pyinline{len()} มีวัตถุประสงค์เพื่อหาความยาวของ String นั้น และสำหรับการระบุตำแหน่งของตัวอักษรแต่ละตัวใน String จะใช้สัญลักษณ์ก้ามปู \pyinline{[ ]} โดยตัวชี้หรือ Index จะเริ่มต้นจาก 0 เช่น \pyinline{fruit[0]}
+มีฟังก์ชันสำหรับ String อยู่หลายฟังก์ชัน เช่น ฟังก์ชัน \pyinline{len()} มีวัตถุประสงค์เพื่อหาความยาวของ String นั้น และสำหรับการระบุตำแหน่งของตัวอักษรแต่ละตัวใน String จะใช้สัญลักษณ์ก้ามปู \pyinline{[ ]} โดยตัวชี้หรือ Index จะเริ่มต้นจาก 0 เช่น \pyinline{fruit[0]} ตัวอย่างการใช้ฟังก์ชัน len() และการใช้สัญลักษณ์ก้ามปู [ ] มีดังต่อไปนี้
 
 \begin{codelist}{การใช้ฟังก์ชัน len() และการใช้สัญลักษณ์ก้ามปู [ ]}{}
 >>> fruit = 'banana'
@@ -26,9 +26,9 @@ String คือ ข้อความหรือตัวอักษรที
 
 \section{การเดินทางตามตัวชี้ของ String}
 
-การเดินทางไปเรื่อยๆ ตามตัวชี้ของ String โดยในตัวอย่างแรกจะเป็นการใช้ while ส่วนในตัวอย่างถัดมาจะใช้ตัวแปร string เป็น Iterator ซึ่งผลลัพธ์จะออกมาเหมือนกัน
+วิธีการเดินทางไปเรื่อยๆ ตามตัวชี้ของ String เป็นดังต่อไปนี้ โดยในผลลัพธ์ชุดแรกจะเกิดจากการใช้ \texttt{while} Statement ส่วนในผลลัพธ์ถัดมาจะใช้ตัวแปร String เป็น Iterator โดยการใช้ \texttt{for} Statement ซึ่งผลลัพธ์จะออกมาเหมือนกัน
 
-Source code:
+
 \begin{codelist}{Source code ตัวอย่างการเดินทางตามตัวชี้ของ String}{}
 fruit = 'banana'
 i = 0
@@ -38,7 +38,8 @@ while i < len(fruit):
 for character in fruit: print(character)
 \end{codelist}
 
-Result:
+ผลลัพธ์เป็นดังนี้
+
 \begin{codelist}{Result ตัวอย่างการเดินทางตามตัวชี้ของ String}{}
 >>>
 b
@@ -60,7 +61,7 @@ a
 
 \section{การตัดคำใน String}
 
-การตัดคำใน String ด้วยตัวชี้ (Index) โดยการตัดคำเป็นส่วนย่อยๆ จะมีรูปแบบการเขียนเป็น [start:end] โดยที่ start เป็นตำแหน่งของ Index เริ่มต้นที่ต้องการ และ end นั้นเป็นตำแหน่งก่อนหน้าตำแหน่งสุดท้ายของตัวอักษรที่ต้องการ
+การตัดคำใน String ด้วยตัวชี้ (Index) โดยการตัดคำเป็นส่วนย่อยๆ จะมีรูปแบบการเขียนเป็น \texttt{[start:end]} โดยที่ start เป็นตำแหน่งของ Index เริ่มต้นที่ต้องการ และ end นั้นเป็นตำแหน่งก่อนหน้าตำแหน่งสุดท้ายของตัวอักษรที่ต้องการ ตัวอย่างการทำ String slices เป็นดังต่อไปนี้
 
 \begin{codelist}{การทำ String slices}{}
 >>> s = 'Monty Python'
@@ -78,7 +79,7 @@ a
 \end{codelist}
 
 
-หากเขียนเป็น  \pyinline{[start:]} ระบุจุดเริ่มต้นที่ start ผลลัพธ์จะแสดงยาวไปจนถึงจุดสิ้นสุด และหากเขียนเป็น  \pyinline{[:end]} ผลลัพธ์ที่ได้จะแสดงอักษรตั้งแต่ตัวแรกหรือตัวชี้ที่ศูนย์ไปจนถึงตัวสิ้นสุดที่ระบุไว้
+หากเขียนเป็น  \pyinline{[start:]} ระบุจุดเริ่มต้นที่ start ผลลัพธ์จะแสดงยาวไปจนถึงจุดสิ้นสุด และหากเขียนเป็น  \pyinline{[:end]} ผลลัพธ์ที่ได้จะแสดงอักษรตั้งแต่ตัวแรกหรือตัวชี้ที่ศูนย์ไปจนถึงตัวสิ้นสุดที่ระบุไว้ ตัวอย่างารเชียน String slices แบบไม่ระบุต้นหรือปลาย เป็นดังต่อไปนี้
 
 \begin{codelist}{การเชียน String slices แบบไม่ระบุต้นหรือปลาย}{}
 >>> s[1:]
@@ -91,7 +92,7 @@ a
 
 \section{โครงสร้างข้อมูลที่เปลี่ยนแปลงไม่ได้}
 
-String เป็นโครงสร้างข้อมูลที่เปลี่ยนแปลงไม่ได้ ดังนั้นถ้าหากต้องการสร้าง String ใหม่ก็ต้องสร้างเป็น Object ใหม่เท่านั้น
+String เป็นโครงสร้างข้อมูลที่เปลี่ยนแปลงไม่ได้ ดังนั้นถ้าหากต้องการสร้าง String ใหม่ก็ต้องสร้างเป็น Object ใหม่เท่านั้น ตัวอย่างการสร้าง String ใหม่เป็นดังต่อไปนี้
 
 \begin{codelist}{การสร้าง String ใหม่}{}
 >>> s
@@ -113,7 +114,7 @@ TypeError: 'str' object does not support item assignment
 
 \section{การค้นหาตัวอักษรใน String}
 
-การเขียนโปรแกรมเพื่อค้นหาตัวอักษรใน String แล้วส่งค่าออกมาเป็นค่าตัวชี้ตัวอักษรใน String สามารถเขียนเป็นตัวอย่างฟังก์ชันดังนี้ คือ 
+การเขียนโปรแกรมเพื่อค้นหาตัวอักษรใน String แล้วส่งค่าออกมาเป็นค่าตัวชี้ตัวอักษรใน String มีผังงานด้งต่อไปนี้
 
 \begin{itemize}
 \item ให้ฟังก์ชันชื่อว่า find มีการส่งค่า str เป็น string และค่า char เป็น character 
@@ -125,7 +126,8 @@ TypeError: 'str' object does not support item assignment
 \item เมื่อ while เป็นเท็จแล้ว หรือเมื่อค้นจนครบ character ใน string แล้วให้ส่งค่ากลับคือ -1
 \end{itemize}
 
-Source code:
+จากผังงานดังกล่าวสามารถเขียนเป็นฟังก์ชันในภาษา Python  ได้ดังนี้
+
 \begin{codelist}{Source code ตัวอย่างการสร้างโปรแกรมเพื่อค้นหาตัวอักษรใน String}{}
 def find(str, char):
     i = 0
@@ -135,7 +137,8 @@ def find(str, char):
     return -1
 \end{codelist}
 
-Result:
+ซึ่งจะได้ผลลัพธ์ดังนี้
+
 \begin{codelist}{Result การสร้างโปรแกรมเพื่อค้นหาตัวอักษรใน String}{}
 >>> find('Mike', 'c')
 -1
@@ -145,10 +148,9 @@ Result:
 \end{codelist}
 
 
-
 \section{เมธอดของ String (String Methods)}
 
-การดำเนินการกับ String สามารถศึกษาฟังก์ชันได้ที่ \url{https://docs.python.org/2.4/lib/string-methods.html} เช่น  \pyinline{str.upper()} ใช้ทำงานเพื่อแปลงตัวอักษรภาษาอังกฤษเป็นตัวพิมพ์ใหญ่
+การดำเนินการกับ String สามารถศึกษาฟังก์ชันได้ที่ \url{https://docs.python.org/2.4/lib/string-methods.html} เช่น  \pyinline{str.upper()} ใช้ทำงานเพื่อแปลงตัวอักษรภาษาอังกฤษเป็นตัวพิมพ์ใหญ่ ตัวอย่างการใช้ String methods เป็นดังต่อไปนี้
 
 \begin{codelist}{การใช้ String methods}{}
 >>> s = 'Monty Python'
@@ -166,7 +168,7 @@ Result:
 
 \section{\texttt{in} โอเปอร์เรเตอร์}
 
-ใช้ในการพิสูจน์ค่าแบบ Boolean Expression เช่น ‘t’ in s แปลว่า ตัวอักษรตัว t อยู่ใน String ชื่อว่า s หรือไม่ หรือในทางตรงข้ามเพื่อการตรวจสอบว่าไม่มีหรือไม่ให้ใส่ not in 
+\texttt{in} โอเปอร์เรเตอร์ ใช้ในการพิสูจน์ค่าแบบ Boolean Expression เช่น \texttt{'t' in s} แปลว่า ตัวอักษรตัว t อยู่ใน String ชื่อว่า s หรือไม่ หรือในทางตรงข้ามเพื่อการตรวจสอบว่าไม่มีหรือไม่ให้ใส่ \texttt{not in} ดังตัวอย่างต่อไปนี้ 
 
 \begin{codelist}{การใช้ in operator}{}
 >>> 't' in s
@@ -175,7 +177,7 @@ True
 
 \section{การเปรียบเทียบ String}
 
-การเปรียบเทียบ String สามารถใช้สัญลักษณ์  ( > , < , <= , <= , == , !=  ) เพื่อเปรียบเทียบค่าของ String สองชุด โดยดูผลลัพธ์ของการเปรียบเทียบค่าของ ASCII value นั้นๆ
+การเปรียบเทียบ String สามารถใช้สัญลักษณ์  (\texttt{ > , < , <= , <= , == , !=}  ) เพื่อเปรียบเทียบค่าของ String สองชุด โดยดูผลลัพธ์ของการเปรียบเทียบค่าของ ASCII value นั้นๆ ดังตัวอย่างต่อไปนี้
 
 \begin{codelist}{การเปรียบเทียบ String สองชุด}{}
 >>> 'banana' == 'banana'
@@ -195,7 +197,7 @@ False
 
 \section{การจัดวางรูปแบบของ String (String Formatting)}
 
-การเปลี่ยนการจัดวางรูปแบบของ String มีสองวิธีคือ แบบ Classic ซึ่งทำได้โดยใส่สัญลักษณ์ + แต่สัญลักษณ์นี้จะมีข้อจำกัดคือไม่สามารถแทรกข้อความระหว่างกันได้ แต่หากใช้สัญลักษณ์ \pyinline{\%} จะช่วยแก้ไขข้อจำกัดนี้ได้ เช่น \pyinline{\%s} สำหรับ string และ \pyinline{\%d} สำหรับตัวเลข 
+การเปลี่ยนการจัดวางรูปแบบของ String มีสองวิธีคือ แบบ Classic ซึ่งทำได้โดยใส่สัญลักษณ์ + แต่สัญลักษณ์นี้จะมีข้อจำกัดคือไม่สามารถแทรกข้อความระหว่างกันได้ แต่หากใช้สัญลักษณ์ \pyinline{\%} จะช่วยแก้ไขข้อจำกัดนี้ได้ เช่น \pyinline{\%s} สำหรับ string และ \pyinline{\%d} สำหรับตัวเลข ตัวอย่างการเปลี่ยนการจัดวางของ String โดยใช้ \%s เป็นดังต่อไปนี้
 
 \begin{codelist}{การเปลี่ยนการจัดวางของ String โดยใช้ \%s}{}
 >>> 'Hello' + 'Mike'
@@ -205,15 +207,15 @@ False
 >>>
 \end{codelist}
 
+และตัวอย่างการเปลี่ยนการจัดวางของ String โดยใช้ \%d เป็นดังต่อไปนี้
+
 \begin{codelist}{การเปลี่ยนการจัดวางของ String โดยใช้ \%d}{}
 >>> 'Total is \%d baht' \% 12
 'Total is 12 baht'
 >>>
 \end{codelist}
 
-
-
-ส่วนการเปลี่ยนการจัดวางของ String แบบ Modern คือ ใช้ .format และระบุ Parameters ได้มากกว่า 1 ตัว อีกทั้งยังสามารถจัดเรียงลำดับ Parameters สลับก่อนหลังได้ตามสะดวก สามารถศึกษาเพิ่มเติมได้ที่ \url{https://docs.python.org/3/library/string.html\#format-examples}
+ส่วนการเปลี่ยนการจัดวางของ String แบบ Modern คือ ใช้ \texttt{.format} และระบุ Parameters ได้มากกว่า 1 ตัว อีกทั้งยังสามารถจัดเรียงลำดับ Parameters สลับก่อนหลังได้ตามสะดวก สามารถศึกษาเพิ่มเติมได้ที่ \url{https://docs.python.org/3/library/string.html\#format-examples} ตัวอย่างการจัดวาง String โดยใช้ .format() เป็นดังต่อไปนี้
 
 \begin{codelist}{การจัดวาง String โดยใช้ .format()}{}
 >>> x = 12
@@ -228,21 +230,21 @@ False
 \begin{enumerate} 
 \item 	เขียนฟังก์ชันต่อไปนี้
 \begin{itemize}
-\item 	รับค่าข้อความ 'James had had had the cat.'
+\item 	รับค่าข้อความ \texttt{'James had had had the cat.'}
 \item 	นับจำนวนคำว่า had
 \end{itemize}
 \item 	เขียนฟังก์ชันต่อไปนี้
 \begin{itemize}
-\item 	รับค่าข้อความ  'I intend to live forever, or die trying.'
+\item 	รับค่าข้อความ  \texttt{'I intend to live forever, or die trying.'}
 \item 	แทนค่าคำว่า to ด้วย three
 \end{itemize}
 \item 	เขียนฟังก์ชันต่อไปนี้
 \begin{itemize}
-\item 	คำนวณความยาวของ string ที่รับมาจากผู้ใช้
+\item 	คำนวณความยาวของ String ที่รับมาจากผู้ใช้
 \end{itemize}
 \item 	เขียนฟังก์ชันต่อไปนี้
 \begin{itemize}
-\item 	รับ string มาแล้วเปลี่ยนค่ากลับกันระหว่างตัวอักษรตัวแรกกับตัวสุดท้ายของ string นั้น
+\item 	รับ String มาแล้วเปลี่ยนค่ากลับกันระหว่างตัวอักษรตัวแรกกับตัวสุดท้ายของ String นั้น
 \end{itemize}
 \end{enumerate}
 
