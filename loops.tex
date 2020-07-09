@@ -1,19 +1,7 @@
 \chapter{การใช้ประโยคสั่งทำงานวนซ้ำ}
 \section{ฟังก์ชัน \texttt{range()}}
 
-ฟังก์ชัน  \pyinline{range()} คือ ระยะตั้งแต่เริ่มต้นถึงก่อนระยะสิ้นสุด มักจะใช้ในการควบคุมการทำงานของโปรแกรมเป็นจำนวนรอบ มีวิธีการเขียนดังนี้  \pyinline{range(start, stop[,step]):} โดย start เป็นค่าเริ่มต้น stop เป็นตำแหน่งค่าระยะสิ้นสุด และ step คือ ระยะห่างการเพิ่มดังตัวอย่างนี้
-
-%\begin{pycode}
-%>>> for i in range(5): print(i, end=' ')
-%0 1 2 3 4 
-%>>> for i in range(1,5): print(i, end=' ')
-%1 2 3 4 
-%>>> for i in range(1,5,2): print(i, end=' ')
-%1 3 
-%>>> for i in range(5,1,-2): print(i, end=' ')
-%5 3 
-%>>> 
-%\end{pycode}
+ฟังก์ชัน  \pyinline{range()} คือ ระยะตั้งแต่เริ่มต้นถึงก่อนระยะสิ้นสุด มักจะใช้ในการควบคุมการทำงานของโปรแกรมเป็นจำนวนรอบ มีวิธีการเขียนดังนี้  \pyinline{range(start, stop[,step]):} โดย start เป็นค่าเริ่มต้น stop เป็นตำแหน่งค่าระยะสิ้นสุด และ step คือ ระยะห่างการเพิ่มดังตัวอย่างต่อไปนี้
 
 \begin{codelist}{ตัวอย่างการใช้ \texttt{range}}{}
 >>> for i in range(5): print(i, end=' ')
@@ -31,21 +19,12 @@
 
 คำสั่ง  \pyinline{for} statement เป็นการทำงานซ้ำๆ ตามจำนวนครั้งที่ระบุไว้อย่างแน่นอน เช่น การใช้  \pyinline{for} statement ร่วมกัน  \pyinline{range()} โดยมีรูปแบบการเขียนดังนี้
 
-%\begin{pycode}
-%for var in sequence:
-%    # statements
-%\end{pycode}
-
 \begin{codelist}{รูปแบบการเขียน for statement}{}
 for var in sequence:
     # statements
 \end{codelist}
 
-ตัวอย่างการใช้ for statement
-
-%\begin{pycode}
-%for x in range(0,5): print(x, end=' ')
-%\end{pycode}
+ตัวอย่างการใช้ \pyinline{for}  statement เป็นดังนี้
 
 \begin{codelist}{ตัวอย่างการใช้ for statement}{}
 for x in range(0,5): print(x, end=' ')
@@ -53,29 +32,13 @@ for x in range(0,5): print(x, end=' ')
 
 ซึ่งจะได้ผลลัพธ์ดังนี้
 
-%\begin{pycode}
-%>>>
-%0 1 2 3 4
-%>>>
-%\end{pycode}
-
 \begin{codelist}{ผลลัพธ์จากตัวอย่างการใช้ for statement}{}
 >>>
 0 1 2 3 4
 >>>
 \end{codelist}
 
-ตัวอย่างการใช้ for statement ใน Python shell จะได้ผลลัพธ์ดังนี้
-
-%\begin{pycode}
-%>>> name = 'Jan'
-%>>> for char in name: print(char, end=' ')
-%J a n 
-%>>> mylist = ['Jan', 200, 4.5]
-%>>> for item in mylist: print(item, end = ' ')
-%Jan 200 4.5 
-%>>> 
-%\end{pycode}
+ตัวอย่างการใช้ \pyinline{for}  statement ใน Python shell จะได้ผลลัพธ์ดังนี้
 
 \begin{codelist}{ตัวอย่างการใช้ for statement}{}
 >>> name = 'Jan'
@@ -87,31 +50,43 @@ Jan 200 4.5
 >>> 
 \end{codelist}
 
+ตัวอย่างการใช้ \pyinline{for}  statement ที่มีการผสมของการใช้ \texttt{if} ในการกำหนดเงื่อนไขการตัดสินใจ เป็นดังนี้
+\begin{codelist}{ตัวอย่างการใช้ for statement}{}
+message = input('Enter a message: ')
+vowels = 'AEIOU'
+counter = 0
+for char in message:
+    if char.upper() in vowels:
+        counter += 1
+print('Vowels: ', counter)
+\end{codelist}
+
+
+ซึ่งจะได้ผลลัพธ์ดังนี้
+
+\begin{codelist}{ผลลัพธ์จากตัวอย่างการใช้ for statement}{}
+Enter a message: Jantawan
+Vowels:  3
+>>> 
+\end{codelist}
+
 
 
 
 \section{คำสั่ง \texttt{while}}
 
- \pyinline{while} Statement เป็นคำสั่งให้โปรแกรมทำงานวนซ้ำในขณะที่เงื่อนไขของการวนซ้ำนั้นยังคงเป็นจริงอยู่ และเมื่อเงื่อนไขเป็นเท็จจะสิ้นสุดการทำงานวนซ้ำนั้นทันที ดังนั้นจึงต้องมีตัวควบคุมในการเพิ่มค่าไปเรื่อยๆ จนเงื่อนไขเป็นเท็จ มีลักษณะการเขียนดังนี้
-
-%\begin{pycode}
-%while expression:
-%    # satements
-%\end{pycode}
+ \pyinline{while} Statement เป็นคำสั่งให้โปรแกรมทำงานวนซ้ำในขณะที่เงื่อนไขของการวนซ้ำนั้นยังคงเป็นจริงอยู่ และเมื่อเงื่อนไขเป็นเท็จจะสิ้นสุดการทำงานวนซ้ำนั้นทันที ดังนั้นจึงต้องมีตัวควบคุมในการเพิ่มค่าไปเรื่อยๆ จนเงื่อนไขเป็นเท็จ 
+ 
+ \pyinline{while} Statement มีลักษณะการเขียน 3 รูปแบบ คือ แบบ Pre-Test แบบ Post-Test และแบบ Mid-Test
+ 
+รูปแบบการเขียน  \pyinline{while} statement แบบ Pre-Test เป็นดังนี้คือ
 
 \begin{codelist}{รูปแบบการเขียน while statement}{}
 while expression:
-    # satements
+    # statements
 \end{codelist}
 
-ตัวอย่างการใช้ while statement เป็นดังนี้
-
-%\begin{pycode}
-%x = 0
-%while x < 10:
-%    print(x)
-%    x = x + 1
-%\end{pycode}
+และมีตัวอย่างการใช้ \texttt{while} statement เป็นดังนี้
 
 \begin{codelist}{ตัวอย่างการใช้ while statement}{}
 x = 0
@@ -121,19 +96,6 @@ while x < 10:
 \end{codelist}
 
 ซึ่งได้ผลลัพธ์เช่นนี้
-
-%\begin{pycode}
-%0
-%1
-%2
-%3
-%4
-%5
-%6
-%7
-%8
-%9
-%\end{pycode}
 
 \begin{codelist}{ผลลัพธ์จากตัวอย่างการใช้ while statement}{}
 0
@@ -148,11 +110,52 @@ while x < 10:
 9
 \end{codelist}
 
-\section{คำสั่ง \texttt{break}}
+รูปแบบการเขียน  \pyinline{while} statement แบบ Post-Test เป็นดังนี้คือ
 
-คำสั่ง  \pyinline{break} เพื่อให้หลุดการทำงานในลูป
+\begin{codelist}{รูปแบบการเขียน while statement}{}
+while True:
+    # statements
+    if Boolean_Expression: break
+\end{codelist}
 
-\begin{codelist}{ตัวอย่างการใช้ break}{}
+และมีตัวอย่างการใช้ \texttt{while} statement เป็นดังนี้
+
+\begin{codelist}{รูปแบบการเขียน while statement}{}
+i = 10
+while True:
+    if i \% 8 == 0: print( i, "หาร 8 ลงตัว")
+    if i \% 4 == 0: print( i, "หาร 4 ลงตัว")
+    if i \% 2 == 0: print( i, "หาร 2 ลงตัว")
+    i -= 2
+    if i <= 0: break
+\end{codelist}
+
+ซึ่งได้ผลลัพธ์เช่นนี้
+\begin{codelist}{ผลลัพธ์จากตัวอย่างการใช้ break}{}
+10 หาร 2 ลงตัว
+8 หาร 8 ลงตัว
+8 หาร 4 ลงตัว
+8 หาร 2 ลงตัว
+6 หาร 2 ลงตัว
+4 หาร 4 ลงตัว
+4 หาร 2 ลงตัว
+2 หาร 2 ลงตัว
+>>>
+\end{codelist}
+
+รูปแบบการเขียน  \pyinline{while} statement แบบ Mid-Test เป็นดังนี้คือ
+
+\begin{codelist}{รูปแบบการเขียน while statement}{}
+while expression:
+    # statements 1
+    if Boolean_Expression: break
+    # statements 2
+    
+\end{codelist}
+
+และมีตัวอย่างการใช้ \texttt{while} statement เป็นดังนี้
+
+\begin{codelist}{Mid-test}{}
 x = 0
 while True:
     print(x)
@@ -160,6 +163,7 @@ while True:
     x = x +1
 \end{codelist}
 
+ซึ่งได้ผลลัพธ์เช่นนี้
 \begin{codelist}{ผลลัพธ์จากตัวอย่างการใช้ break}{}
 0
 1
@@ -175,29 +179,7 @@ while True:
 \end{codelist}
 
 
-\section{ฟังก์ชันที่เรียกตัวเอง (Recursion)}
 
-Recursion คือการเรียกใช้ฟังก์ชันซ้อนฟังก์ชันนั้นๆ เอง หรือ ฟังก์ชันเรียกใช้ตัวมันเอง จากฟังก์ชัน  \pyinline{countdown()} ในตัวอย่าง เมื่อมีการเรียกฟังก์ชัน  \pyinline{countdown(5)} โปรแกรมจะทำงานลดหลั่นลงไปเรื่อยๆ คือตั้งแต่ 5, 4, 3, 2, 1 ตราบเท่าที่ n ยังมากกว่า 0 แต่เมื่อเงื่อนไขเป็นเท็จแล้ว โปรแกรมจะแสดงคำว่า Go! แทน
-
-
-\begin{codelist}{ตัวอย่างการใช้ Recursion}{}
-def countdown(n):
-    if x > 0:
-        print(n)
-        countdown(n-1)
-    else:
-        print('Go.')
-\end{codelist}
-
-\begin{codelist}{ผลลัพธ์จากตัวอย่างการใช้ Recursion}{}
->>> countdown(5)
-5
-4
-3
-2
-1
-Go.
-\end{codelist}
 
 
 \section{แบบฝึกหัด}
