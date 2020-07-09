@@ -1,9 +1,9 @@
 \chapter{การเขียนและใช้งานฟังก์ชัน (Functions)}
 \section{การเรียกใช้ฟังก์ชัน}
 
-การใช้ฟังก์ชันในภาษา Python ก็เหมือนฟังก์ชันทางคณิตศาสตร์ คือ กำหนดชื่อฟังก์ชันตามด้วยสิ่งที่อยู่ในวงเล็บซึ่งเรียกว่า arguments ซึ่งอาจจะมีได้มากกว่า 1 และในภาษา Python มีการกำหนดฟังก์ชันมาให้เรียกใช้ได้เลยอยู่บ้างแล้ว เช่น type(42) คือ การแสดงค่าประเภทของเลข 42 หรือ id(42) คือการแสดงตำแหน่งที่อยู่ของเลข 42 ในหน่วยความจำ
+ฟังก์ชัน (Function) คือชุดคำสั่งส่วนหนึ่งของโปรแกรมที่ทำงานเพื่อวัตถุประสงค์บางอย่าง ฟังก์ชันในภาษา Python มีทั้ง Built-in ฟังก์ชันของภาษา Python เอง และฟังก์ชันที่ผู้เขียนโปรแกรมเขียนขึ้นมาเอง การใช้ฟังก์ชันในภาษา Python จะคล้ายกับฟังก์ชันทางคณิตศาสตร์ คือ กำหนดชื่อฟังก์ชันตามด้วยสิ่งที่อยู่ในวงเล็บซึ่งเรียกว่า Arguments ซึ่งอาจจะมีได้มากกว่า 1 และในภาษา Python มีการกำหนดฟังก์ชันมาให้เรียกใช้ได้เลยอยู่บ้างแล้ว เช่น \texttt{type(42)} คือ การแสดงค่าประเภทของเลข 42 หรือ \texttt{id(42)} คือการแสดงตำแหน่งที่อยู่ของเลข 42 ในหน่วยความจำ
 
-\begin{codelist}{ตัวอย่างฟังก์ชันของ Python}{}
+\begin{codelist}{ตัวอย่าง Built-in ฟังก์ชันในภาษา Python}{}
 >>> type(42)
 |<class \rq{}int\rq{}>|
 >>> a = 1
@@ -14,7 +14,7 @@
 
 \section{การเรียกใช้โมดูล (Modules)}
 
-โมดูล (Modules) คือ ฟังก์ชันที่รวมกันไว้เป็นหมวดหมู่ และสามารถดึงมาใช้ได้ในโปรแกรมได้ด้วยการ import เช่น import math และหากเรียกใช้ฟังก์ชัน dir(math) จะแสดงฟังก์ชันในโมดูล math ออกมา 
+โมดูล (Modules) คือ ฟังก์ชันที่รวมกันไว้เป็นหมวดหมู่ และสามารถดึงมาใช้ได้ในโปรแกรมได้ด้วยการ \texttt{import} เช่น \texttt{import math} และหากเรียกใช้ฟังก์ชัน \texttt{dir(math)} จะแสดงฟังก์ชันในโมดูล math ออกมา 
 
 \begin{codelist}{การเรียกใช้โมดูล math}{}
 >>> import math
@@ -26,18 +26,16 @@
 \end{codelist}
 
 
-การใช้งานโมดูลจะมีการใช้งานแบบ Dot Notation หากเห็นการเขียนโมดูล math ในลักษณะนี้ เช่น  \pyinline{math.pi} ตัว  \pyinline{pi} เรียกว่าเป็นตัวแปรที่อยู่ในโมดูล  \pyinline{math} ซึ่งไม่ใช่ฟังก์ชัน แต่ถ้าเขียน  \pyinline{math.pow(2,2)} คือ สองยกกำลังสอง ลักษณะนี้จะเป็นการเรียกใช้ฟังก์ชันที่อยู่ในโมดูล
+การใช้งานโมดูลจะมีการใช้งานแบบ Dot Notation หากเห็นการเขียนโมดูล math ในลักษณะนี้ เช่น  \texttt{math.pi} ตัว  \texttt{pi} เรียกว่าเป็นตัวแปรที่อยู่ในโมดูล  \texttt{math} ซึ่งไม่ใช่ฟังก์ชัน แต่ถ้าเขียน  \texttt{math.pow(2,2)} คือ สองยกกำลังสอง ลักษณะนี้จะเป็นการเรียกใช้ฟังก์ชันที่อยู่ในโมดูล
 
-\begin{codelist}{การใช้งานโมดูลแบบ Dot notation}{}
+\begin{codelist}{การใช้งานโมดูลแบบ Dot Notation}{}
 >>> math.pi
 3.141592653589793
 >>> math.pow(2,2)
 4.0
 \end{codelist}
 
-
-\section{ฟังก์ชันซ้อน (Composition)}
-
+%\section{ฟังก์ชันซ้อน (Composition)}
 การใช้ฟังก์ชันไม่จำเป็นต้องใช้ฟังก์ชันแบบฟังก์ชันเดียว ฟังก์ชันใช้ฟังก์ชันซ้อนกันได้ คือ การรวมฟังก์ชันหลายๆ อันซ้อนกัน เรียกต่อๆ กันไปได้
 
 \begin{codelist}{การเรียกใช้ฟังก์ชันแบบ Composition}{}
@@ -45,9 +43,9 @@
 4.9999999999999
 \end{codelist}
 
-\section{การสร้างฟังก์ชัน}
+\section{การสร้างฟังก์ชันในภาษา Python}
 
-การเขียนฟังก์ชันหรือสร้างฟังก์ชันขึ้นมาเองเพื่อทำงานเพื่อวัตถุประสงค์บางอย่าง ต้องใช้ def Statement ซึ่งย่อมาจาก define 
+การเขียนฟังก์ชันหรือสร้างฟังก์ชันขึ้นมาเองจะกระทำเพื่อต้องการทำงานเพื่อวัตถุประสงค์บางอย่าง ต้องใช้ \texttt{def} Statement ซึ่งย่อมาจาก Define เมื่อเขียนฟังก์ชันไว้ใน Source Code แล้วทำการ Run ฟังก์ชันนั้นจะถูก Define ไว้ในระบบแล้วถูกเรียกใช้ขึ้นมาได้เลย ด้วยการเรียกชื่อฟังก์ชันนั้นกี่ครั้งต่อกี่ครั้งก็ได้ โดยการเรียกใช้คือ เรียกชื่อฟังก์ชันนั้นตามด้วยวงเล็บ () ซึ่งจะมี Arguments หรือไม่ก็แล้วแต่ฟังก์ชันที่กำหนดไว้
 
 \begin{codelist}{รูปแบบการสร้างฟังก์ชัน}{}
 def function_name(args...):
@@ -58,57 +56,60 @@ def function_name(args...):
     return value
 \end{codelist}
 
-เมื่อเขียนฟังก์ชันไว้ใน Source Code แล้วทำการ Run ฟังก์ชันนั้นจะถูก Define ไว้ในระบบแล้วถูกเรียกใช้ขึ้นมาได้เลย ด้วยการเรียกชื่อฟังก์ชันนั้นกี่ครั้งต่อกี่ครั้งก็ได้ โดยการเรียกใช้คือ เรียกชื่อฟังก์ชันนั้นตามด้วยวงเล็บซึ่งจะมี Arguments หรือไม่ก็แล้วแต่ฟังก์ชันที่กำหนดไว้
 
-Source code:
-\begin{codelist}{Source code ตัวอย่างฟังก์ชันที่สร้างขึ้นมาเอง}{}
+\begin{codelist}{ตัวอย่างฟังก์ชันที่สร้างขึ้นมาเอง}{}
 def happy_birthday_song():
-    print('Happy Birthday.')
-    print('Happy Birthday.')
     print('Happy Birthday.')
     print('Happy Birthday to you.')
 \end{codelist}
 
-Result:
-\begin{codelist}{Result การเรียกใช้ฟังก์ชันที่สร้างขึ้นมาเอง}{}
+\begin{codelist}{ผลลัพธ์จากตัวอย่างการเรียกใช้ฟังก์ชันที่สร้างขึ้นมาเอง}{}
 >>>  happy_birthday_song()
-Happy Birthday.
-Happy Birthday.
 Happy Birthday.
 Happy Birthday to you.
 \end{codelist}
 
+\begin{codelist}{ตัวอย่างฟังก์ชันที่สร้างขึ้นมาเองโดยมีการใช้ return}{}
+def newage(age):
+    x = age+50
+    return x
 
-\section{พารามิเตอร์ของฟังก์ชัน (Parameters)}
-
-ในวงเล็บ () เป็นการกำหนด Argument ของฟังก์ชัน ซึ่งจะกลายเป็นพารามิเตอร์ (Parameters) หรือตัวแปรที่ใช้ในฟังก์ชันนั้นๆ เท่านั้น หรือเรียกว่า Local Variables 
-
-Source code:
-\begin{codelist}{Source code ตัวอย่างการใช้ Local variables}{}
-x = 5
-def happy_birthday_song(name):
-    print('Happy Birthday.')
-    print('Happy Birthday.')
-    print('Happy Birthday.')
-    print('Happy Birthday to ' , name)
-    print(x)
-happy_birthday_song('Mike')
+age = int(input('Enter your age: '))
+print('In 50 years from now, you will be ', newage(age), end='.')
 \end{codelist}
 
-Result:
-\begin{codelist}{Result ตัวอย่างการใช้ Local variables}{}
-Happy Birthday.
-Happy Birthday.
-Happy Birthday.
-Happy Birthday to Mike
-5
+\begin{codelist}{ผลลัพธ์จากตัวอย่างฟังก์ชันที่สร้างขึ้นมาเองโดยมีการใช้ return}{}
+>>>
+Enter your age: 6
+In 50 years from now, you will be  56.
+>>> 
 \end{codelist}
 
 
-ตัวแปรใดก็ตามที่จะใช้เป็น Local ให้ใส่คำว่า global ไปด้านหน้าตัวแปรที่ถูกเรียกใช้ในฟังก์ชัน อันที่จริงแล้วจะไม่เขียนคำว่า global ก็ได้หากชื่อตัวแปรไม่ซ้ำกันเลย
+\section{ขอบเขตของตัวแปร}
 
-Source code:
-\begin{codelist}{Source code ตัวอย่างการใช้ Global variables}{}
+ในวงเล็บ () เป็นการกำหนด Argument ของฟังก์ชัน ซึ่งจะกลายเป็นพารามิเตอร์ (Parameters) หรือตัวแปรที่ใช้ในฟังก์ชันนั้นๆ เท่านั้นและต้องประมวลผลให้เสร็จสิ้นในฟังก์ชัน หรือเรียกว่า Local Variables ตัวแปร Local นี้ จะไม่สามารถเรียกใช้ที่โปรแกรมหลักได้ และผู้เขียนโปรแกรมก็ไม่สามารถนำตัวแปรนี้ไปใช้ในฟังก์ชันอื่น ๆ ได้ ส่วนตัวแปร Global (Global Variables) จะประกาศไว้ในส่วนหลักของโปรแกรมที่เขียนขึ้น ฟังก์ชันย่อยและตัวโปรแกรมหลักสามารถเรียกใช้ตัวแปร Global ได้
+
+\begin{codelist}{ตัวอย่างการใช้ Local และ Global Variables}{}
+def newage(age):
+    a = 50 #local variable
+    x = age + a #local variable
+    return x
+
+age = int(input('Enter your age: ')) #global variable
+print('In 50 years from now, you will be ', newage(age), end='.')
+\end{codelist}
+
+\begin{codelist}{ผลลัพธ์ตัวอย่างการใช้ Local และ Global Variables}{}
+Enter your age: 18
+In 50 years from now, you will be  68.
+>>> 
+\end{codelist}
+
+
+ตัวแปรใดก็ตามที่จะใช้เป็น Local ให้ใส่คำว่า \texttt{global} ไปด้านหน้าตัวแปรที่ถูกเรียกใช้ในฟังก์ชัน อันที่จริงแล้วจะไม่เขียนคำว่า \texttt{global}  ก็ได้หากชื่อตัวแปรไม่ซ้ำกันเลย
+
+\begin{codelist}{ตัวอย่างการใช้ Global Variables}{}
 x = 5
 def happy_birthday_song(name):
     global x
@@ -120,21 +121,21 @@ def happy_birthday_song(name):
 happy_birthday_song('Mike')
 \end{codelist}
 
-Result:
-\begin{codelist}{Result ตัวอย่างการใช้ Global variables}{}
+\begin{codelist}{ผลลัพธ์ตัวอย่างการใช้ Global Variables}{}
+>>>
 Happy Birthday.
 Happy Birthday.
 Happy Birthday.
 Happy Birthday to Mike
 5
+>>>
 \end{codelist}
 
 \section{ฟังก์ชัน \texttt{return}}
 
-ฟังก์ชันทุกอันจะต้อง return คือสิ้นสุดการทำงาน แต่ได้เว้นไว้ในฐานที่เข้าใจ เมื่อโปรแกรมไล่การทำงานมาถึงจุด return โปรแกรมจะหยุดทำงานทันทีทั้งๆ ที่ยังมีคำสั่งอื่นตามมาหลังจาก return อีกก็ตาม  ฟังก์ชัน return ซึ่งไม่ได้ return ค่าอะไรออกมาเรียกว่า Void 
+ฟังก์ชันทุกอันจะต้อง return คือสิ้นสุดการทำงาน แต่ได้เว้นไว้ในฐานที่เข้าใจ เมื่อโปรแกรมไล่การทำงานมาถึงจุด return โปรแกรมจะหยุดทำงานทันทีทั้งๆ ที่ยังมีคำสั่งอื่นตามมาหลังจาก return อีกก็ตาม  ฟังก์ชัน \texttt{return} ซึ่งไม่ได้คืน ค่าอะไรออกมาเรียกว่า Void 
 
-Source code:
-\begin{codelist}{Source code ตัวอย่างการใช้ return}{}
+\begin{codelist}{ตัวอย่างการใช้ \texttt{return}}{}
 x = 5
 def happy_birthday_song(name):
     print('Happy Birthday.')
@@ -146,18 +147,19 @@ def happy_birthday_song(name):
 happy_birthday_song('Mike')
 \end{codelist}
 
-Result:
-\begin{codelist}{Result ตัวอย่างการใช้ return}{}
+\begin{codelist}{ผลลัพธ์ตัวอย่างการใช้ \texttt{return}}{}
+>>>
 Happy Birthday.
+>>>
 \end{codelist}
 
 \section{การคืนค่าจากฟังก์ชัน}
 
 ฟังก์ชันสามารถ return ค่าได้ด้วย ดังเช่นตัวอย่างการหาพื้นที่สี่เหลี่ยม โดยกำหนดฟังก์ชันชื่อ \\  \pyinline{rectangle_area(width, height)} และฟังก์ชันมีพารามิเตอร์สองตัวสำหรับความกว้างและความยาวของสี่เหลี่ยม และฟังก์ชันทำการคืนค่า ผลลัพธ์ที่เป็นพื้นที่กลับไปด้วยคำสั่ง \pyinline{return}
 
-Source code:
-\begin{codelist}{Source code ตัวอย่างการใช้ return ที่มีการส่งค่ากลับ}{}
-# void function definition
+
+\begin{codelist}{ตัวอย่างการใช้ \texttt{return} ที่มีการส่งค่ากลับ}{}
+
 def happy_birthday_song(name):
     print('Happy Birthday.')
     print('Happy Birthday.')
@@ -172,9 +174,11 @@ x = rectangle_area(4, 3)
 print('The area of rectangle is', str(x))
 \end{codelist}
 
-Result:
-\begin{codelist}{Result การใช้ return ที่มีการส่งค่ากลับ}{}
+
+\begin{codelist}{ผลลัพธ์ตัวอย่างการใช้ \texttt{return} ที่มีการส่งค่ากลับ}{}
+>>>
 The area of rectangle is 12
+>>>
 \end{codelist}
 
 
@@ -185,7 +189,7 @@ The area of rectangle is 12
 
 จากรูป  \pyinline{x=f(g(h(x)))} ทำงานเหมือนกันกับ  \pyinline{x = h(x) }แล้ว  \pyinline{x = g(x)} แล้ว  \pyinline{x = f(x)}
 
-\begin{codelist}{Functional programming}{}
+\begin{codelist}{Functional Programming}{}
 x = f(g(h(x)))
 x = h(x)
 x = g(x)
