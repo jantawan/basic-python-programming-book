@@ -38,6 +38,7 @@
 \usepackage{caption}
 \usepackage{fancyhdr}
 \usepackage{hanging}
+\usepackage{appendix}
 
 \definecolor{darkblue}{RGB}{14,77,146}
 
@@ -130,17 +131,21 @@
 \mainmatter
 \include{introduction}
 \include{python_elements}
-% \include{conditional_statements}
-% \include{functions}
-% \include{loops}
-% \include{string}
-% \include{list}
-% \include{dictionary}
-% \include{tuple}
-% \include{file}
-% \include{oop}
+\include{conditional_statements}
+\include{functions}
+\include{loops}
+\include{string}
+\include{list}
+\include{dictionary}
+\include{tuple}
+\include{file}
+\include{oop}
 
 \renewcommand{\refname}{บรรณานุกรม}
 \bibliography{book}
 \bibliographystyle{apacite}
+
+\renewcommand{\appendixname}{ภาคผนวก}
+\include{resume}
+
 \end{document}
