@@ -340,7 +340,6 @@ Concept of programming, Algorithm to solve the problem, Flowchart, Expression an
 
 \section*{การจัดการประสบการณ์การเรียนรู้}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
 \begin{itemize}
 \item บรรยายและถ่ายทอดประสบการณ์แก่ผู้เรียน
 \item ถามตอบในชั้นเรียน
@@ -351,13 +350,10 @@ Concept of programming, Algorithm to solve the problem, Flowchart, Expression an
 \item  สอบปฏิบัติเขียนโปรแกรมเพื่อการบูรณาการความรู้ที่ได้รับทั้งกลางภาคและปลายภาค
 \item  ใช้เอกสารประกอบการสอนเพื่อใช้การทบทวนความรู้ที่ได้รับและฝึกทำแบบฝึกหัดท้ายบท
 \end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
 
 
 \section*{สื่อการเรียนรู้}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
 \begin{itemize}
 \item เอกสารประกอบการสอนรายวิชา 477-201 การเขียนโปรแกรมคอมพิวเตอร์
 \item คลิปวิดีโอออนไลน์สื่อการสอนรายวิชา 477-201 การเขียนโปรแกรมคอมพิวเตอร์
@@ -376,20 +372,15 @@ Concept of programming, Algorithm to solve the problem, Flowchart, Expression an
     \item \url{https://www.w3schools.com/python/}
     \end{itemize}
 \end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
 
 \section*{การประเมินผล}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
 \begin{itemize}
 \item ร้อยละ 30 สอบกลางภาคแบบปฏิบัติการเขียนโปรแกรม
 \item ร้อยละ 30 สอบปลายภาคแบบปฏิบัติการเขียนโปรแกรม
 \item ร้อยละ 20 แบบฝึกหัดย่อยแบบปฏิบัติการเขียนโปรแกรม
 \item ร้อยละ 20 แบบทดสอบย่อยแบบ MCQs
 \end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
 
 \section*{สัปดาห์ที่ทำการประเมินผล}
 
@@ -622,27 +613,22 @@ Concept of programming, Algorithm to solve the problem, Flowchart, Expression an
 
 \section*{เอกสารอ้างอิงที่ใช้ในการสอน}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-	\item
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+% \renewcommand{\refname}{}
+% \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
+\makeatletter
+\renewcommand{\chapter}{\@gobbletwo}
+\bibliography{book}
+\makeatother
 
 \section*{นักศึกษา}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item นักศึกษาที่เรียนวิชานี้เป็นนักศึกษาคณะวิทยาการจัดการ ภาควิชาบริหารธุรกิจ สาขาวิชาระบบสารสนเทศ ชั้นปีที่ 2 จำนวน 42 คน
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+นักศึกษาที่เรียนวิชานี้เป็นนักศึกษาคณะวิทยาการจัดการ ภาควิชาบริหารธุรกิจ สาขาวิชาระบบสารสนเทศ ชั้นปีที่ 2 จำนวน 42 คน
 
 \section*{ผลการสอน}
 
 \begin{table}[H]
 \centering
-\begin{tabu}{l l l l}
+\begin{tabu}{c l r r}
  \hline
  ระดับคะแนน & ช่วงคะแนน & จำนวนผู้เรียน & ร้อยละ \\ [0.5ex] 
  \hline
@@ -654,14 +640,18 @@ C  & 60 - 64.99 & 2 & 4.76 \\
 D+  & 55 - 59.99 & 2 & 4.76 \\
 D  & 50 - 54.99 & 6 & 14.29 \\
 E  & 0 - 49.99 & 2 & 4.76 \\
+\hline
 \end{tabu}
 \end{table}
 
 
 \vspace{10mm}
 \noindent
+\hangindent=9cm
+\hangafter=0
 ลงชื่อ\\
-ดร.จันทวรรณ ปิยะวัฒน์\\
+\vspace{10mm}\\
+\textbf{ดร.จันทวรรณ ปิยะวัฒน์}\\
 ผู้สอน
 
 
