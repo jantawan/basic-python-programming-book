@@ -1,7 +1,9 @@
 \chapter{แผนการสอน}
 \section*{คำอธิบายรายวิชาและวัตถุประสงค์ที่ระบุไว้ในหลักสูตร}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
+\definecolor{myblue}{cmyk}{0.80, 0.13, 0.14, 0.04, 1.00}
+
+\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries,colback=myblue!05,colframe=myblue]
 แนวความคิดเรื่องการเขียนโปรแกรม ขั้นตอนวิธีในการแก้ไขปัญหา การสร้างคำสั่งสำหรับเขียนขั้นตอนวิธีการ เขียนผังงาน นิพจน์ คำสั่งในการเขียนโปรแกรม หลักไวยากรณ์ของภาษาโปรแกรมระดับสูง การเขียนโปรแกรมสมัยใหม่ การทดสอบ การแก้ไขโปรแกรม การติดตั้ง และการเขียนเอกสารประกอบโปรแกรม
 
 Concept of programming, Algorithm to solve the problem, Flowchart, Expression and instruction, High-level language syntax, Modern programming, Testing, Debugging, Installation and software documentation
@@ -9,7 +11,7 @@ Concept of programming, Algorithm to solve the problem, Flowchart, Expression an
 
 \section*{วัตถุประสงค์ของวิชา}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
+\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries,colback=myblue!05,colframe=myblue]
 มีจุดมุ่งหมายให้นักศึกษาได้มีพื้นฐานความรู้ความเข้าใจในหลักการเขียนโปรแกรมคอมพิวเตอร์เบื้องต้นด้วยภาษา Python ส่วนประกอบต่างๆ ของโปรแกรมคอมพิวเตอร์และภาษา Python สามารถเขียนโปรแกรมคอมพิวเตอร์อย่างง่ายด้วยภาษา Python ได้ตามการวิเคราะห์และออกแบบขั้นตอนการทำงานของโปรแกรมอย่างมีระบบ และมีความรู้ความเข้าใจในการเขียนโปรแกรมแบบมีเงื่อนไขเพื่อการตัดสินใจ การเขียนคำสั่งเพื่อการทำงานซ้ำ และโมดูลส่วนเสริมต่างๆ ของโปรแกรมภาษา Python เพื่อเรียนรู้เรื่องการเขียนโปรแกรมแบบฟังก์ชันและการเขียนโปรแกรมเชิงวัตถุได้
 \end{tcolorbox}
 \vspace{1.5cm}
@@ -18,11 +20,13 @@ Concept of programming, Algorithm to solve the problem, Flowchart, Expression an
 
 % \lesson command definition
 
+\definecolor{mybrown}{RGB}{128,64,0}
+
 \newcommand{\lesson}[3]{
 % \subsection*{สัปดาห์ที่ {#1}}
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries,title=สัปดาห์ที่ {#1}]
+\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries,title=สัปดาห์ที่ {#1},colback=mybrown!05,colframe=mybrown]
 \begin{description}
-
+\vspace{0.5cm}
 \item[ผู้สอน] จันทวรรณ ปิยะวัฒน์
 \item[จำนวนชั่วโมงบรรยาย] 2
 \item[จำนวนชั่วโมงปฎิบัติ] 2
@@ -32,9 +36,10 @@ Concept of programming, Algorithm to solve the problem, Flowchart, Expression an
 \begin{itemize}[leftmargin=0pt]
 {#3}
 \end{itemize}
-
+\vspace{1cm}
 \end{description}
 \end{tcolorbox}
+% \vspace{1cm}
 \newpage
 }
 
@@ -384,11 +389,23 @@ Concept of programming, Algorithm to solve the problem, Flowchart, Expression an
 
 \section*{สัปดาห์ที่ทำการประเมินผล}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item สัปดาห์ที่ 3
-\item วัตถุประสงค์การประเมิน
-	\\ เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่1-2 ความรู้เบื้องต้นเกี่ยวกับ Python และ ส่วนประกอบต่างๆ ของภาษา Python แล้วผู้เรียนสามารถ 
+\newcommand{\weeklyevaluation}[3]{
+\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries,title=สัปดาห์ที่ {#1},colback=myblue!05,colframe=myblue]
+	\vspace{0.5cm}
+	\begin{description}
+	\item[วัตถุประสงค์การประเมิน] \hfill \\
+	{#2}
+	\item[วิธีการประเมิน] \hfill
+	{#3}
+	\end{description}
+	\vspace{1cm}
+\end{tcolorbox}
+\vspace{1.5cm}
+% \newpage
+}
+
+\weeklyevaluation{3}{
+	เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่1-2 ความรู้เบื้องต้นเกี่ยวกับ Python และ ส่วนประกอบต่างๆ ของภาษา Python แล้วผู้เรียนสามารถ 
 	\begin{itemize}
 	\item อธิบายหลักการหน้าที่ของโปรแกรมคอมพิวเตอร์ได้
 	\item อธิบายการทำงานของ Python ได้
@@ -398,223 +415,159 @@ Concept of programming, Algorithm to solve the problem, Flowchart, Expression an
 	\item ใช้คำสั่งพื้นฐาน print และ input ในการเขียนโปรแกรมได้
 	\item เขียนโปรแกรมภาษา Python ที่มีโครงสร้างตามลำดับได้
 	\end{itemize}
-\item วิธีการประเมิน
+}{
 	\begin{itemize}
 	\item แบบฝึกหัดย่อยแบบปฏิบัติการเขียนโปรแกรม
 	\item แบบทดสอบย่อยแบบ MCQs
 	\end{itemize}
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item สัปดาห์ที่ 5
-\item วัตถุประสงค์การประเมิน
-	\\ เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรมภาษา Python เกี่ยวกับเนื้อหาบทที่ 3 ประโยคเงื่อนไขในภาษา Python แล้วผู้เรียนสามารถ
+\weeklyevaluation{5}{
+	 เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรมภาษา Python เกี่ยวกับเนื้อหาบทที่ 3 ประโยคเงื่อนไขในภาษา Python แล้วผู้เรียนสามารถ
 	\begin{itemize}
 	\item อธิบายหลักการของ Boolean Expression ได้
 	\item เขียนโปรแกรม Python ที่มีโครงสร้างทางเลือกโดยมีเงื่อนไขได้
 	\end{itemize}
-\item วิธีการประเมิน
+}{
 	\begin{itemize}
 	\item แบบฝึกหัดย่อยแบบปฏิบัติการเขียนโปรแกรม
 	\item แบบทดสอบย่อยแบบ MCQs
 	\end{itemize}
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item สัปดาห์ที่ 7
-\item วัตถุประสงค์การประเมิน
-	\\ เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 4 การเขียนฟังก์ชันในภาษา Python แล้วผู้เรียนสามารถ
+\weeklyevaluation{7}{
+	 เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 4 การเขียนฟังก์ชันในภาษา Python แล้วผู้เรียนสามารถ
 	\begin{itemize}
 	\item อธิบายหลักการของฟังก์ชันหรือโปรแกรมย่อย
 	\item เข้าใจวิธีการแบ่งโปรแกรมใหญ่เป็นโปรแกรมย่อยและเรียกใช้โปรแกรมย่อยได้
 	\item เขียนฟังก์ชันในภาษา Python ได้
 	\end{itemize}
-\item วิธีการประเมิน
+}{
 	\begin{itemize}
 	\item แบบฝึกหัดย่อยแบบปฏิบัติการเขียนโปรแกรม
 	\item แบบทดสอบย่อยแบบ MCQs
 	\end{itemize}
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item สัปดาห์ที่ 8
-\item วัตถุประสงค์การประเมิน
-	\\ เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 5 การใช้ประโยคสั่งทำงานซ้ำในภาษา Python แล้วผู้เรียนสามารถ
+\weeklyevaluation{8}{
+	 เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 5 การใช้ประโยคสั่งทำงานซ้ำในภาษา Python แล้วผู้เรียนสามารถ
 	\begin{itemize}
 	\item เข้าใจกระบวนการทำงานแบบวนซ้ำ
 	\item เขียนโปรแกรมภาษา Python โดยใช้โครงสร้างการทำวนซ้ำแบบ \pyinline{for} และ \pyinline{while} ได้
 	\item เขียนโปรแกรมภาษา Python โดยใช้ฟังก์ชัน \pyinline{range()} ได้
 	\item เขียนโปรแกรมภาษา Python สร้างฟังก์ชันที่เรียกตัวเองได้
 	\end{itemize}
-\item วิธีการประเมิน
+}{
 	\begin{itemize}
 	\item แบบฝึกหัดย่อยแบบปฏิบัติการเขียนโปรแกรม
 	\item แบบทดสอบย่อยแบบ MCQs
 	\end{itemize}
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item สัปดาห์สอบกลางภาคเชิงปฏิบัติการ
-\item วัตถุประสงค์การประเมิน
-	\begin{itemize}
-	\item เพื่อประเมินความรู้ความเข้าใจทั้งหมดของเนื้อหาบทที่ 1-5
-	\end{itemize}
-\item วิธีการประเมิน
-	\begin{itemize}
-	\item สอบปฏิบัติการเขียนโปรแกรม
-	\end{itemize}
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+\weeklyevaluation{9 (สัปดาห์สอบกลางภาคเชิงปฎิบัติการ)}{
+	เพื่อประเมินความรู้ความเข้าใจทั้งหมดของเนื้อหาบทที่ 1-5
+}{
+	\\
+	สอบปฏิบัติการเขียนโปรแกรม
+}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item สัปดาห์ที่ 10
-\item วัตถุประสงค์การประเมิน
-	\\ เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 6 ชนิดข้อมูล String แล้วผู้เรียนสามารถ
+\weeklyevaluation{10}{
+	 เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 6 ชนิดข้อมูล String แล้วผู้เรียนสามารถ
 	\begin{itemize}
 	\item อธิบายหลักการใช้และจัดการกับ String และตัวชี้
 	\item อธิบายโครงสร้างข้อมูลที่เปลี่ยนแปลงไม่ได้ได้
 	\item เขียนโปรแกรมภาษา Python เพื่อจัดการกับ String ได้
 	\item อธิบายและใช้เมธอดของ String ได้
 	\end{itemize}
-\item วิธีการประเมิน
+}{
 	\begin{itemize}
 	\item แบบฝึกหัดย่อยแบบปฏิบัติการเขียนโปรแกรม
 	\item แบบทดสอบย่อยแบบ MCQs
 	\end{itemize}
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item สัปดาห์ที่ 11
-\item วัตถุประสงค์การประเมิน
-	\\ เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 7 ชนิดข้อมูล List แล้วผู้เรียนสามารถ
+\weeklyevaluation{11}{
+	 เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 7 ชนิดข้อมูล List แล้วผู้เรียนสามารถ
 	\begin{itemize}
 	\item อธิบายหลักการใช้และจัดการกับ List และตัวชี้
 	\item อธิบายโครงสร้างข้อมูลที่เปลี่ยนแปลงได้ได้
 	\item เขียนโปรแกรมภาษา Python เพื่อจัดการกับ List ได้
 	\item อธิบายและใช้เมธอดของ List ได้
 	\end{itemize}
-\item วิธีการประเมิน
+}{
 	\begin{itemize}
 	\item แบบฝึกหัดย่อยแบบปฏิบัติการเขียนโปรแกรม
 	\item แบบทดสอบย่อยแบบ MCQs
 	\end{itemize}
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item สัปดาห์ที่ 12
-\item วัตถุประสงค์การประเมิน
-	\\ เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 8 ชนิดข้อมูล Dictionary แล้วผู้เรียนสามารถ
+\weeklyevaluation{12}{
+	 เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 8 ชนิดข้อมูล Dictionary แล้วผู้เรียนสามารถ
 	\begin{itemize}
 	\item อธิบายหลักการใช้และจัดการกับ Dictionary และตัวชี้
 	\item เขียนโปรแกรมภาษา Python เพื่อจัดการกับ Dictionary ได้
 	\item อธิบายและใช้เมธอดของ Dictionary ได้
 	\end{itemize}
-\item วิธีการประเมิน
+}{
 	\begin{itemize}
 	\item แบบฝึกหัดย่อยแบบปฏิบัติการเขียนโปรแกรม
 	\item แบบทดสอบย่อยแบบ MCQs
 	\end{itemize}
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item สัปดาห์ที่ 13
-\item วัตถุประสงค์การประเมิน
-	\\ เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 9 ชนิดข้อมูล Tuple แล้วผู้เรียนสามารถ
+\weeklyevaluation{13}{
+	 เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 9 ชนิดข้อมูล Tuple แล้วผู้เรียนสามารถ
 	\begin{itemize}
 	\item อธิบายหลักการใช้และจัดการกับ Tuple และตัวชี้
 	\item เขียนโปรแกรมภาษา Python เพื่อจัดการกับ Tuple ได้
 	\item อธิบายและใช้เมธอดของ Tuple ได้
 	\end{itemize}
-\item วิธีการประเมิน
+}{
 	\begin{itemize}
 	\item แบบฝึกหัดย่อยแบบปฏิบัติการเขียนโปรแกรม
 	\item แบบทดสอบย่อยแบบ MCQs
 	\end{itemize}
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item สัปดาห์ที่ 14
-\item วัตถุประสงค์การประเมิน
-	\\ เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 10 การจัดการ Files แล้วผู้เรียนสามารถ
+\weeklyevaluation{14}{
+	 เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 10 การจัดการ Files แล้วผู้เรียนสามารถ
 	\begin{itemize}
 	\item อธิบายหลักการใช้และจัดการกับ Files ใน Python ได้
 	\item เขียนโปรแกรม Python เพื่อจัดการกับ Files ได้
 	\item เขียนโปรแกรม Python เพื่อจัดการกับฐานข้อมูลแบบ Key-Value ได้
 	\end{itemize}
-\item วิธีการประเมิน
+}{
 	\begin{itemize}
 	\item แบบฝึกหัดย่อยแบบปฏิบัติการเขียนโปรแกรม
 	\item แบบทดสอบย่อยแบบ MCQs
 	\end{itemize}
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item สัปดาห์ที่ 15
-\item วัตถุประสงค์การประเมิน
-	\\ เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 11 Object-oriented programming (OOP) แล้วผู้เรียนสามารถ
+\weeklyevaluation{15}{
+	 เมื่อฟังการบรรยาย ถามตอบในชั้นเรียน และฝึกปฏิบัติการเขียนโปรแกรม Python เกี่ยวกับเนื้อหาบทที่ 11 Object-oriented programming (OOP) แล้วผู้เรียนสามารถ
 	\begin{itemize}
 	\item อธิบายหลักการพื้นฐานเขียนโปรแกรม Python แบบ OOP ได้
 	\item อธิบายหลักการทำงานของคลาสและออบเจ็กต์
 	\item อธิบายหลักการทำงานแบบ Inheritance และ Polymorphism ได้
 	\item เขียนโปรแกรม Python แบบ OOP พื้นฐานได้
 	\end{itemize}
-\item วิธีการประเมิน
+}{
 	\begin{itemize}
 	\item แบบฝึกหัดย่อยแบบปฏิบัติการเขียนโปรแกรม
 	\item แบบทดสอบย่อยแบบ MCQs
 	\end{itemize}
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+}
 
-\begin{tcolorbox}[breakable,enhanced,fonttitle=\bfseries]
-\begin{itemize}
-\item สัปดาห์ปลายกลางภาคเชิงปฏิบัติการ
-\item วัตถุประสงค์การประเมิน
-	\begin{itemize}
-	\item เพื่อประเมินความรู้ความเข้าใจทั้งหมดของเนื้อหาบทที่ 6-11
-	\end{itemize}
-\item วิธีการประเมิน
-	\begin{itemize}
-	\item สอบปฏิบัติการเขียนโปรแกรม
-	\end{itemize}
-\end{itemize}
-\end{tcolorbox}
-\vspace{1.5cm}
+\weeklyevaluation{16 (สัปดาห์สอบปลายภาคเชิงปฎิบัติการ)}{
+	เพื่อประเมินความรู้ความเข้าใจทั้งหมดของเนื้อหาบทที่ 6-11
+}{
+	\\ สอบปฏิบัติการเขียนโปรแกรม
+}
+
+\newpage
 
 \section*{เอกสารอ้างอิงที่ใช้ในการสอน}
 
-% \renewcommand{\refname}{}
-% \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
 \makeatletter
 \renewcommand{\chapter}{\@gobbletwo}
 \bibliography{book}
@@ -626,8 +579,7 @@ Concept of programming, Algorithm to solve the problem, Flowchart, Expression an
 
 \section*{ผลการสอน}
 
-\begin{table}[H]
-\centering
+\begin{center}
 \begin{tabu}{c l r r}
  \hline
  ระดับคะแนน & ช่วงคะแนน & จำนวนผู้เรียน & ร้อยละ \\ [0.5ex] 
@@ -642,10 +594,10 @@ D  & 50 - 54.99 & 6 & 14.29 \\
 E  & 0 - 49.99 & 2 & 4.76 \\
 \hline
 \end{tabu}
-\end{table}
+\end{center}
 
 
-\vspace{10mm}
+\vspace{7mm}
 \noindent
 \hangindent=9cm
 \hangafter=0

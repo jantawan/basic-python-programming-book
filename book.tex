@@ -38,6 +38,16 @@
 \usepackage{caption}
 \usepackage{fancyhdr}
 
+\definecolor{darkblue}{RGB}{14,77,146}
+
+% \titleformat{\chapter}
+% {\color{darkblue}\normalfont\Huge\bfseries}
+% {\color{darkblue}\thechapter}{1em}{}
+
+% \titleformat{\section}
+% {\color{darkblue}\normalfont\Large\bfseries}
+% {\color{darkblue}\thesection}{1em}{}
+
 \captionsetup[table]{skip=10pt}
 \graphicspath{{./images/}}
 \setlist[itemize]{noitemsep,nolistsep,topsep=0pt}
@@ -47,7 +57,16 @@
 \fancyhead[LE,RO]{\nouppercase\leftmark}
 \fancyfoot[LE,RO]{\thepage}
 \renewcommand{\headrulewidth}{2pt}
+% \renewcommand{\headrule}{\hbox to\headwidth{\color{darkblue}\leaders\hrule height \headrulewidth\hfill}}
 \renewcommand{\footrulewidth}{1pt}
+% \renewcommand{\footrule}{\hbox to\headwidth{\color{darkblue}\leaders\hrule height \footrulewidth\hfill}}
+
+\makeatletter
+\patchcmd{\f@nch@head}{\rlap}{\color{darkblue}\rlap}{}{}
+\patchcmd{\headrule}{\hrule}{\color{darkblue}\hrule}{}{}
+\patchcmd{\f@nch@foot}{\rlap}{\color{darkblue}\rlap}{}{}
+\patchcmd{\footrule}{\hrule}{\color{darkblue}\hrule}{}{}
+\makeatother
 
 \titleformat{\chapter}[display]
 %\titleclass{\chapter}{straight}
@@ -108,8 +127,8 @@
 \include{lesson_plan}
 
 \mainmatter
-% \include{introduction}
-% \include{python_elements}
+\include{introduction}
+\include{python_elements}
 % \include{conditional_statements}
 % \include{functions}
 % \include{loops}
