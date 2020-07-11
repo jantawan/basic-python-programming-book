@@ -1,0 +1,152 @@
+% !TEX program = XeLaTeX (custom)
+\documentclass[14pt,a4paper]{extbook}
+
+%% --- Thai --- %
+% Set up fonts and encoding
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+
+% Enable line breaks for Thai text
+\XeTeXlinebreaklocale "th"
+\XeTeXlinebreakskip = 0pt plus 2pt minus 1pt
+
+% Set up Thai fonts
+\setmainfont[%
+    ItalicFont={Thasadith Italic},%
+    BoldFont={Thasadith Bold},%
+    BoldItalicFont={Thasadith Italic},%
+    Script=Thai,%
+    Scale=MatchLowercase,%
+    WordSpace=1.25,%
+    Mapping=tex-text,%
+]{Thasadith}
+
+%% --- %%
+
+\usepackage{etoolbox}
+\usepackage[a4paper,top=1.5in,bottom=1.5in,left=1.25in,right=0.75in]{geometry}
+\usepackage{indentfirst}
+\usepackage{apacite}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{tabu}
+\usepackage[most]{tcolorbox}
+\tcbuselibrary{minted}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{hanging}
+\usepackage{appendix}
+
+\definecolor{darkblue}{RGB}{14,77,146}
+
+
+% \titleformat{\chapter}
+% {\color{darkblue}\normalfont\Huge\bfseries}
+% {\color{darkblue}\thechapter}{1em}{}
+
+% \titleformat{\section}
+% {\color{darkblue}\normalfont\Large\bfseries}
+% {\color{darkblue}\thesection}{1em}{}
+
+\captionsetup[table]{skip=10pt}
+\graphicspath{{./images/}}
+\setlist[itemize]{noitemsep,nolistsep,topsep=0pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\nouppercase\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{2pt}
+% \renewcommand{\headrule}{\hbox to\headwidth{\color{darkblue}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrulewidth}{1pt}
+% \renewcommand{\footrule}{\hbox to\headwidth{\color{darkblue}\leaders\hrule height \footrulewidth\hfill}}
+
+\makeatletter
+\patchcmd{\f@nch@head}{\rlap}{\color{darkblue}\rlap}{}{}
+\patchcmd{\headrule}{\hrule}{\color{darkblue}\hrule}{}{}
+\patchcmd{\f@nch@foot}{\rlap}{\color{darkblue}\rlap}{}{}
+\patchcmd{\footrule}{\hrule}{\color{darkblue}\hrule}{}{}
+\makeatother
+
+\titleformat{\chapter}[display]
+%\titleclass{\chapter}{straight}
+{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{0pt}{\Huge}
+\titlespacing*{\chapter}{0pt}{-50pt}{0pt}
+\titlespacing{\chapter}{0pt}{-50pt}{0pt}
+
+
+\usepackage{minted}
+\setminted{fontsize=\small,baselinestretch=1,startinline=true}
+\newminted{py}{python3,linenos=true,escapeinside=||}
+
+\renewcommand{\baselinestretch}{1.5}
+\renewcommand{\contentsname}{สารบัญ}
+\renewcommand{\chaptername}{บทที่}
+\renewcommand{\listfigurename}{สารบัญรูป}
+\renewcommand{\figurename}{รูปที่}
+\renewcommand{\listtablename}{สารบัญตาราง}
+\renewcommand{\tablename}{ตารางที่}
+
+%https://tex.stackexchange.com/a/343366
+\newenvironment{codelist}[3][]
+ {\VerbatimEnvironment
+  % \begin{figure}[H]
+  % \caption{#2}\label{#3}
+  \begin{minted}[xleftmargin=\parindent,linenos,escapeinside=||]{python3}}
+ {
+   \end{minted}
+  % \end{figure}
+  }
+
+\begin{document}
+\newmintinline{py}{python3}
+
+\frontmatter
+\title{
+เอกสารประกอบการสอนรายวิชา\\
+477-201 การเขียนโปรแกรมคอมพิวเตอร์\\
+\vspace{1mm}
+การเขียนโปรแกรมภาษา Python เบื้องต้น\\
+(Basic Python Programming)
+}
+\author{
+ดร. จันทวรรณ ปิยะวัฒน์\\
+\vspace{1mm}\\
+สาขาวิชาระบบสารสนเทศทางธุรกิจ\\
+ภาควิชาบริหารธุรกิจ คณะวิทยาการจัดการ\\
+มหาวิทยาลัยสงขลานครินทร์\\
+ภาคการศึกษาที่ 1/2562
+}
+\date{\vspace{1ex}}
+\maketitle
+\include{preface}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\include{lesson_plan}
+
+\mainmatter
+\include{introduction}
+\include{python_elements}
+\include{conditional_statements}
+\include{functions}
+\include{loops}
+\include{string}
+\include{list}
+\include{dictionary}
+\include{tuple}
+\include{file}
+\include{oop}
+
+\renewcommand{\refname}{บรรณานุกรม}
+\bibliography{book}
+\bibliographystyle{apacite}
+
+\renewcommand{\appendixname}{ภาคผนวก}
+\include{resume}
+
+\end{document}
